@@ -1,16 +1,29 @@
-# This is a sample Python script.
+# 1. 包的引入
+from ply import lex
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# 2. Token类型列表的声明
+tokens = (
+    'TOKEN_1', 'TOKEN_2', 'TOKEN_3'
+)
+
+# 3. Token匹配规则的声明（字符串，函数）
+t_TOKEN_1 = r"""reg_expr_1"""
+t_TOKEN_2 = r"""reg_expr_2"""
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def t_TOKEN_3(t):
+    r"""reg_expr_3"""
+    return t
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    data = 'reg_expr_3reg_expr_2reg_expr_1'
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    lexer = lex.lex()
+    lexer.input(data)
+
+    while True:
+        token = lexer.token()
+        print(token)
+        if not token:
+            break
