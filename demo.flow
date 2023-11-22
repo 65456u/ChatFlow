@@ -1,0 +1,3 @@
+flow origin {
+    speak "hello, world"
+}

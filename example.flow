@@ -1,0 +1,37 @@
+flow main {
+    speak "Hello, how can I assist you?"
+    if user_input equals "help" then {
+        speak "Sure, I can help you with that!"
+        goto help_flow
+    } elif user_input equals "contact" then {
+        speak "Certainly! Please provide your contact information."
+        listen for contact_info for 1m before end
+    } else {
+        speak "I'm sorry, I didn't understand. Can you please repeat?"
+        goto main
+    }
+}
+
+flow help_flow {
+    speak "Here are some common topics I can assist with:"
+    speak "1. Account information"
+    speak "2. Product troubleshooting"
+    speak "3. Billing inquiries"
+    speak "Please select a number for more details."
+    
+    listen for help_option for 30s before timeout
+    
+    if help_option equals "1" then {
+        speak "To access your account information, please visit our website and log in."
+        end
+    } elif help_option equals "2" then {
+        speak "For product troubleshooting, please contact our technical support team."
+        end
+    } elif help_option equals "3" then {
+        speak "For billing inquiries, please reach out to our billing department."
+        end
+    } else {
+        speak "I'm sorry, that is not a valid option. Please try again."
+        goto help_flow
+    }
+}
