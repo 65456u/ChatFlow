@@ -1,29 +1,17 @@
-# 1. 包的引入
-from ply import lex
-
-# 2. Token类型列表的声明
-tokens = (
-    'TOKEN_1', 'TOKEN_2', 'TOKEN_3'
-)
-
-# 3. Token匹配规则的声明（字符串，函数）
-t_TOKEN_1 = r"""reg_expr_1"""
-t_TOKEN_2 = r"""reg_expr_2"""
+from ChatFlow import ChatFlow
+from inputimeout import inputimeout, TimeoutOccurred
 
 
-def t_TOKEN_3(t):
-    r"""reg_expr_3"""
-    return t
+def custom_input(timeout=None) -> tuple[str, bool]:
+    try:
+        if timeout:
+            user_input = inputimeout(timeout=timeout)
+        else:
+            user_input = input()
+        return user_input, False
+    except TimeoutOccurred:
+        return None, True
 
 
-if __name__ == '__main__':
-    data = 'reg_expr_3reg_expr_2reg_expr_1'
-
-    lexer = lex.lex()
-    lexer.input(data)
-
-    while True:
-        token = lexer.token()
-        print(token)
-        if not token:
-            break
+x = ChatFlow(print, custom_input, code_path="demo.flow")
+x.run()
