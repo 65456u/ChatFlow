@@ -1,37 +1,41 @@
-flow main {
-    speak "Hello, how can I assist you?"
-    if user_input equals "help" then {
-        speak "Sure, I can help you with that!"
-        goto help_flow
-    } elif user_input equals "contact" then {
-        speak "Certainly! Please provide your contact information."
-        listen for contact_info for 1m before end
-    } else {
-        speak "I'm sorry, I didn't understand. Can you please repeat?"
-        goto main
+flow origin {
+    speak "Hello World"
+    listen for question
+    assign 0 to count
+    while count less than 10 {
+        speak count
+        assign count + 1 to count
+    }
+    if timeout {
+        assign "fuck" to question
+    }
+    if question match "fuck" {
+        engage manual
+    } else if question match "charge" {
+        engage charge
+    }
+    engage thank
+}
+flow manual {
+    speak "calling human client, please be patient."
+    handover manual_service
+    speak "are you pleasant with our service?"
+    listen for comment for 5s
+    handover comment_collector
+    end
+}
+flow charge {
+    speak "what amount would you like to charge?"
+    listen for answer for 5s
+    if timeout{
+        engage charge_timeout
     }
 }
-
-flow help_flow {
-    speak "Here are some common topics I can assist with:"
-    speak "1. Account information"
-    speak "2. Product troubleshooting"
-    speak "3. Billing inquiries"
-    speak "Please select a number for more details."
-    
-    listen for help_option for 30s before timeout
-    
-    if help_option equals "1" then {
-        speak "To access your account information, please visit our website and log in."
-        end
-    } elif help_option equals "2" then {
-        speak "For product troubleshooting, please contact our technical support team."
-        end
-    } elif help_option equals "3" then {
-        speak "For billing inquiries, please reach out to our billing department."
-        end
-    } else {
-        speak "I'm sorry, that is not a valid option. Please try again."
-        goto help_flow
-    }
+flow charge_timeout {
+    speak "timeout, charge cancelled"
+    engage origin
+}
+flow thank {
+    speak "thanks for your support"
+    end
 }

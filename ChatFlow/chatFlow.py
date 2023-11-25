@@ -1,4 +1,5 @@
 from lark import Lark
+
 from .runtime import Runtime
 
 grammar = r"""
@@ -10,32 +11,49 @@ block           : statement*
 
 statement       : if_statement
                 | speak_statement
-                | goto_statement
+                | engage_statement
                 | handover_statement
                 | end_statement
                 | listen_statement
                 | assign_statement
+                | while_statement
 
-if_statement    : "if" condition "{" block "}" elif_statement* else_statement?
-
-elif_statement  : "elif" condition "{" block "}"
+if_statement    : "if" condition "{" block "}" (else_statement)?
 
 else_statement  : "else" "{" block "}"
+                | "else" if_statement
 
-speak_statement : "speak" value
+while_statement : "while" condition "{" block "}"
 
-goto_statement  : "goto" flow_name
+speak_statement : "speak" expression
 
-handover_statement : "handover" script_name
+engage_statement  : "engage" flow_name
+
+handover_statement : "handover" tributary_name
 
 end_statement   : "end"
 
-listen_statement: "listen" "for" variable ("for" time ("before" flow_name)? )?
+listen_statement: "listen" "for" variable ("for" time)?
 
-assign_statement: "assign" identifier "to" expression
+assign_statement: "assign" expression "to" variable
 
 condition       : match_compare
                 | equal_compare
+                | larger_compare
+                | less_compare
+                | boolean
+                | timeout
+
+larger_compare  : expression "larger" "than" expression
+
+less_compare    : expression "less" "than" expression 
+
+boolean         : TRUE
+                | FALSE
+                
+TRUE            : "true"
+
+FALSE           : "false"
 
 match_compare   : expression "match" value ("as" variable)?
 
@@ -45,16 +63,24 @@ expression      : term (add_sub_operator term)*
 
 term            : factor (mul_div_operator factor)*
 
-factor          : literal
-                | identifier
+factor          : value
                 | "(" expression ")"
 
-add_sub_operator: "+" | "-"
+add_sub_operator: PLUS | MINUS
 
-mul_div_operator: "*" | "/"
+mul_div_operator: TIMES | DIVIDE
 
-value           : literal
-                | identifier
+TIMES           : "*"
+
+DIVIDE          : "/"
+
+PLUS            : "+"
+
+MINUS           : "-"
+
+value           : timeout
+                | literal
+                | variable
 
 variable        : identifier
 
@@ -62,9 +88,9 @@ identifier      : IDENTIFIER_TOKEN
 
 flow_name       : identifier
 
-script_name     : identifier
+tributary_name  : identifier
 
-time            : INTEGER_LITERAL time_unit
+time            : value time_unit
 
 time_unit       : second | minute | hour
 
@@ -74,10 +100,13 @@ minute          : "m"
 
 hour            : "h"
 
+timeout         : "timeout"
+
 comparison_operator: "equals" | "larger" "than" | "less" "than"
 
 literal         : STRING_LITERAL
                 | NUMBER_LITERAL
+                
 
 IDENTIFIER_TOKEN: /[a-zA-Z_][a-zA-Z0-9_]*/
 STRING_LITERAL  : /\"(\\.|[^"\n])*\"/
@@ -91,24 +120,15 @@ INTEGER_LITERAL : INT
 %ignore NL
 %ignore /\/\/.*/
 """
-tributary_dict = {}
-
-
-def register_tributary(script_name):
-    def decorator(func):
-        tributary_dict[script_name] = func
-        return func
-
-    return decorator
 
 
 class ChatFlow:
     def __init__(
-        self,
-        speak_function,
-        listen_function,
-        code_path=None,
-        code=None,
+            self,
+            speak_function,
+            listen_function,
+            code_path=None,
+            code=None,
     ):
         self.speak_function = speak_function
         self.listen_function = listen_function

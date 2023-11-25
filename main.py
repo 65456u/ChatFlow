@@ -1,17 +1,33 @@
-from ChatFlow import ChatFlow
 from inputimeout import inputimeout, TimeoutOccurred
 
+from ChatFlow import ChatFlow, register_tributary
 
-def custom_input(timeout=None) -> tuple[str, bool]:
+
+def read_input_with_timeout(timeout=None):
     try:
-        if timeout:
-            user_input = inputimeout(timeout=timeout)
-        else:
+        if timeout is None:
             user_input = input()
-        return user_input, False
+        else:
+            user_input = inputimeout(timeout=timeout)
+        return user_input
     except TimeoutOccurred:
-        return None, True
+        return None
 
 
-x = ChatFlow(print, custom_input, code_path="demo.flow")
+@register_tributary("display")
+def display(context):
+    print(context)
+
+
+@register_tributary("manual_service")
+def manual_service(context):
+    print("manual_service")
+
+
+@register_tributary("comment_collector")
+def comment_collector(context):
+    print("comment_collector")
+
+
+x = ChatFlow(print, read_input_with_timeout, code_path="example.flow")
 x.run()
