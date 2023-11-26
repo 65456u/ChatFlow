@@ -1,4 +1,15 @@
 class Context:
+    '''
+    Represents the context for executing a program or script.
+
+    Attributes:
+        parameter: The parameter passed to the program or script.
+        return_value: The return value of the program or script.
+        scope: A list of dictionaries representing the variable scopes.
+        scope_count: The number of variable scopes in the context.
+        tree: The abstract syntax tree of the program or script.
+        timeout: A flag indicating if the execution timed out.
+    '''
     def __init__(self, parameter, tree):
         self.parameter = parameter
         self.return_value = None

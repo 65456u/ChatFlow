@@ -121,6 +121,23 @@ INTEGER_LITERAL  : INT
 
 
 class Interpreter:
+    '''
+    A class that represents an interpreter for executing ChatFlow scripts.
+
+    Args:
+        code_path (str, optional): The path to the ChatFlow script file. Defaults to None.
+        code (str, optional): The ChatFlow script code. Defaults to None.
+
+    Attributes:
+        script (str): The ChatFlow script code.
+        parser (Lark): The Lark parser for parsing the ChatFlow script.
+        tree (Tree): The parsed syntax tree of the ChatFlow script.
+
+    Methods:
+        __repr__(): Returns a pretty-printed representation of the parsed syntax tree.
+
+    '''
+
     def __init__(
             self,
             code_path=None,

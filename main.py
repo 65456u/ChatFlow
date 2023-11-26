@@ -16,6 +16,6 @@ def comment_collector(context, speak_function, listen_function):
     print("comment_collector")
 
 
-x = Interpreter(code_path="example.flow")
+x = Interpreter(code_path="examples/example.flow")
 y = Runtime(x)
 y.run()
