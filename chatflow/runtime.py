@@ -1,11 +1,11 @@
-
 from .context import Context
-from .runners import *
+from .executors import *
+from .utils import *
 
 
 class Runtime:
-    def __init__(self, tree, speak_function, listen_function):
-        self.tree = tree
+    def __init__(self, interpreter, speak_function=print, listen_function=read_input_with_timeout):
+        self.tree = interpreter.tree
         self.speak_function = speak_function
         self.listen_function = listen_function
         self.flow_dict = {}
@@ -44,9 +44,9 @@ class Runtime:
         state_type = statement.data
         match state_type:
             case "speak_statement":
-                self.run_speak(statement, context)
+                run_speak(statement, context, self.speak_function)
             case "listen_statement":
-                self.run_listen(statement, context)
+                run_listen(statement, context, self.listen_function)
             case "if_statement":
                 self.run_if(statement, context)
             case "engage_statement":
@@ -56,27 +56,9 @@ class Runtime:
             case "end_statement":
                 self.exit = True
             case "handover_statement":
-                run_handover(statement, context)
+                run_handover(statement, context,self.speak_function,self.listen_function)
             case "while_statement":
                 self.run_while(statement, context)
-
-    def run_speak(self, statement, context):
-        value = get_expression(statement.children[0], context)
-        self.speak_function(value)
-
-    def run_listen(self, statement, context):
-        length = len(statement.children)
-        match length:
-            case 1:
-                value = self.listen_function()
-                set_variable(statement.children[0], context, value)
-            case 2:
-                timer = get_time(statement.children[1], context)
-                value = self.listen_function(timer)
-                if value is None:
-                    context.set_timeout(True)
-                else:
-                    set_variable(statement.children[0], context, value)
 
     def run_if(self, statement, context):
         condition = statement.children[0]

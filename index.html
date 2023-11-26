@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebSocket Test</title>
+</head>
+
+<body>
+    <input type="text" id="messageInput" placeholder="Enter a message">
+    <button type="button" onclick="sendMessage()">Send</button>
+    <div id="messageContainer"></div>
+
+    <script>
+        const socket = new WebSocket('ws://localhost:5000');
+
+        socket.onopen = () => {
+            console.log('WebSocket connection established');
+        };
+
+        socket.onmessage = (event) => {
+            const message = event.data;
+            console.log('Received message:', message);
+            displayMessage(message);
+        };
+
+        socket.onclose = () => {
+            console.log('WebSocket connection closed');
+        };
+
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            if (message !== '') {
+                socket.send(message);
+                messageInput.value = '';
+            }
+        }
+
+        function displayMessage(message) {
+            const messageContainer = document.getElementById('messageContainer');
+            const messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            messageContainer.appendChild(messageElement);
+        }
+    </script>
+</body>
+
+</html>

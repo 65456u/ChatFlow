@@ -1,8 +1,5 @@
 from lark import Lark
 
-from .runtime import Runtime
-from .utils import *
-
 grammar = r"""
 chatflow         : flow+
 
@@ -126,13 +123,9 @@ INTEGER_LITERAL  : INT
 class Interpreter:
     def __init__(
             self,
-            speak_function=print,
-            listen_function=read_input_with_timeout,
             code_path=None,
             code=None,
     ):
-        self.speak_function = speak_function
-        self.listen_function = listen_function
         if code_path:
             with open(code_path, "r") as f:
                 self.script = f.read()
@@ -140,10 +133,6 @@ class Interpreter:
             self.script = code
         self.parser = Lark(grammar, start="chatflow", parser="lalr")
         self.tree = self.parser.parse(self.script)
-
-    def run(self):
-        runtime = Runtime(self.tree, self.speak_function, self.listen_function)
-        runtime.run()
 
     def __repr__(self):
         return self.tree.pretty()
