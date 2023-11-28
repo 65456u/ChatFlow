@@ -130,11 +130,11 @@ class Interpreter:
 
     Attributes:
         script (str): The ChatFlow script code.
-        parser (Lark): The Lark parser for parsing the ChatFlow script.
-        tree (Tree): The parsed syntax tree of the ChatFlow script.
+        parser (lark.Lark): The Lark parser for parsing the ChatFlow script.
+        tree (lark.Tree): The parsed syntax tree of the ChatFlow script.
 
     Methods:
-        __repr__(): Returns a pretty-printed representation of the parsed syntax tree.
+        __repr__(str): Returns a pretty-printed representation of the parsed syntax tree.
 
     '''
 

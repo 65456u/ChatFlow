@@ -1,6 +1,12 @@
 flow origin {
     speak "Hello World"
-    listen for question
+    listen for question for 1s
+    if timeout {
+        assign "charge" to question
+    } else {
+        assign "fuck" to question
+    }
+    speak question
     assign 0 to count
     while count less than 10 {
         speak count

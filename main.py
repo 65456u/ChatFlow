@@ -16,6 +16,13 @@ def comment_collector(context, speak_function, listen_function):
     print("comment_collector")
 
 
-x = Interpreter(code_path="examples/example.flow")
-y = Runtime(x)
-y.run()
+async def main():
+    x = Interpreter(code_path="examples/example.flow")
+    y = Runtime(x)
+    await y.run()
+
+
+if __name__ == "__main__":
+    import asyncio
+
+    asyncio.run(main())

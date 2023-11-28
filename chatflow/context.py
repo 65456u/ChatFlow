@@ -1,16 +1,18 @@
 class Context:
-    '''
-    Represents the context for executing a program or script.
+    """Context for a ChatFlow Flow
 
-    Attributes:
-        parameter: The parameter passed to the program or script.
-        return_value: The return value of the program or script.
-        scope: A list of dictionaries representing the variable scopes.
-        scope_count: The number of variable scopes in the context.
-        tree: The abstract syntax tree of the program or script.
-        timeout: A flag indicating if the execution timed out.
-    '''
+    This class represents the context for a ChatFlow flow. It stores information such as the flow's parameter,
+    return value, scope, tree, and timeout status. It also provides methods for manipulating the scope and accessing
+    variables within the scope.
+    """
+
     def __init__(self, parameter, tree):
+        """The constructor for the Context class.
+
+        Args:
+            parameter (any): The parameter used to passed to and from other flows.
+            tree (lark.Tree): The tree representing the ChatFlow Flow.
+        """
         self.parameter = parameter
         self.return_value = None
         self.scope = list()

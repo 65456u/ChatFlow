@@ -1,0 +1,21 @@
+site_name: ChatFlow
+
+theme:
+  name: material
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_submodules: false
+
+nav:
+  - ChatFlow: index.md
+  - Quick Start: quick-start.md
+  - Grammar: grammar.md
+  - Concepts: concepts.md
+  - Advanced: advanced.md
+  - API Reference: reference.md
+  - License: LICENSE.md
