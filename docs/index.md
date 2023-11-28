@@ -38,4 +38,4 @@ In particular:
 
 ## License
 
-Lark uses the [MIT license](LICENSE).
+Lark uses the [MIT license](LICENSE.md).
