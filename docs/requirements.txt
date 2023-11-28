@@ -1,0 +1,3 @@
+search
+mkdocstrings
+mkdocs-material
