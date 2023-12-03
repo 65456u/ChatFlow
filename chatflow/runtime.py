@@ -190,7 +190,6 @@ class Runtime:
                 run_fetch(statement, context)
             case "block":
                 self.run_block(statement, context)
-                    
 
     async def arun_statement(self, statement, context):
         """
@@ -332,4 +331,6 @@ class Runtime:
         """
         condition = statement.children[0]
         while get_condition(condition, context):
+            if self.exit:
+                return
             self.run_block(statement.children[1], context)

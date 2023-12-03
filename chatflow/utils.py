@@ -1,6 +1,3 @@
-import asyncio
-import inspect
-
 import aioconsole
 from inputimeout import inputimeout, TimeoutOccurred
 
@@ -97,8 +94,6 @@ async def aprint(*args, **kwargs):
     print(*args, **kwargs, flush=True)
 
 
-import inspect
-
 async def a_call_function(func, *args, **kwargs):
     """
     Calls a function, either synchronously or asynchronously, depending on the type of the function.
@@ -121,6 +116,7 @@ async def a_call_function(func, *args, **kwargs):
 
 import inspect
 import asyncio
+
 
 def call_function(func, *args, **kwargs):
     """Call a function and return the result.

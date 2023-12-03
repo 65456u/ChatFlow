@@ -63,7 +63,7 @@ TRUE             : "true"
 
 FALSE            : "false"
 
-match_compare    : expression "match" value ("as" variable)?
+match_compare    : expression "matches" value ("as" variable)?
 
 equal_compare    : expression "equals" expression
 

@@ -1,6 +1,6 @@
 flow origin {
     speak "Hello World"
-    listen for question for 1s
+    listen for question for 5s
     if timeout {
         assign "charge" to question
     } else {

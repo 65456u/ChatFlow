@@ -1,0 +1,6 @@
+flow origin {
+    listen for message
+    if message match "\d+" as number {
+        speak number
+    }
+}
