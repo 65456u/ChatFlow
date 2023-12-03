@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../structure/">
+      
+      
+        <link rel="next" href="../statement/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>How to guides - ChatFlow</title>
+        <title>Lexical Analysis - ChatFlow</title>
       
     
     
@@ -63,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-add-two-numbers" class="md-skip">
+        <a href="#lexical-analysis" class="md-skip">
           Skip to content
         </a>
       
@@ -99,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How to guides
+              Lexical Analysis
             
           </span>
         </div>
@@ -229,31 +233,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../grammar/" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Grammar
   </span>
   
 
-      </a>
-    </li>
-  
-
-    
-      
-      
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Grammar
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../concepts/" class="md-nav__link">
+      <a href="../structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Concepts
+    Structure
   </span>
   
 
@@ -261,23 +304,165 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
     
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lexical Analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lexical Analysis
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifiers-and-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifiers and Keywords
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Literals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number Literals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../advanced/" class="md-nav__link">
+      <a href="../statement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Advanced
+    Statements
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BNF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Definition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -339,6 +524,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -347,11 +534,53 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-add-two-numbers" class="md-nav__link">
+  <a href="#comment" class="md-nav__link">
     <span class="md-ellipsis">
-      How To Add Two Numbers?
+      Comment
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identifiers-and-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identifiers and Keywords
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literals
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Literals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      String Literals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-literals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Number Literals
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -370,42 +599,58 @@
                   
 
 
-  <h1>How to guides</h1>
-
-<p>This part of the project documentation focuses on a
-<strong>problem-oriented</strong> approach. You'll tackle common
-tasks that you might have, with the help of the code
-provided in this project.</p>
-<h2 id="how-to-add-two-numbers">How To Add Two Numbers?</h2>
-<p>You have two numbers and you need to add them together.
-You're in luck! The <code>calculator</code> package can help you
-get this done.</p>
-<p>Download the code from this GitHub repository and place
-the <code>calculator/</code> folder in the same directory as your
-Python script:</p>
-<pre><code>your_project/
-│
-├── calculator/
-│   ├── __init__.py
-│   └── calculations.py
-│
-└── your_script.py
+<h1 id="lexical-analysis">Lexical Analysis</h1>
+<p>Lexical analysis is the first phase of the ChatFlow language processing. It involves breaking down the source code into tokens, which are the smallest meaningful units of the language. The lexer, also known as the tokenizer, scans the source code character by character and groups them into tokens based on predefined patterns and rules.</p>
+<h2 id="comment">Comment</h2>
+<p>In ChatFlow, comments are denoted by a hash character (<code>#</code>) followed by the comment text. They can be used to provide explanations, document the code, or temporarily disable specific parts of the flow. Comments in ChatFlow are ignored by the language's interpreter and have no impact on the program's behavior or execution.</p>
+<p>For example:</p>
+<pre><code>flow origin {
+    # This is a comment explaining the purpose of this flow
+    speak &quot;Hello, world!&quot; # This line speaks a greeting message
+    # The following line is commented out to disable its execution
+    # listen for name
+}
 </code></pre>
-<p>Inside of <code>your_script.py</code> you can now import the
-<code>add()</code> function from the <code>calculator.calculations</code>
-module:</p>
-<pre><code># your_script.py
-from calculator.calculations import add
+<p>In the above example, the comments provide additional information about the flow and the code. The interpreter ignores these comments, ensuring they don't affect the execution of the ChatFlow program.</p>
+<h2 id="identifiers-and-keywords">Identifiers and Keywords</h2>
+<p>Identifiers are used to represent names in a programming language. In ChatFlow, an identifier is defined as a sequence of characters that follows a specific pattern.</p>
+<p>The pattern for identifiers in ChatFlow is defined using the following BNF notation:</p>
+<pre><code>identifier_token ::= [a-zA-Z_][a-zA-Z0-9_]*
 </code></pre>
-<p>After you've imported the function, you can use it
-to add any two numbers that you need to add:</p>
-<pre><code># your_script.py
-from calculator.calculations import add
-
-print(add(20, 22))  # OUTPUT: 42.0
+<p>An identifier must start with a letter (uppercase or lowercase) or an underscore, followed by zero or more letters, digits, or underscores. This means that identifiers can include a combination of letters (both uppercase and lowercase), digits, and underscores, but they cannot start with a digit.</p>
+<p>ChatFlow also has a set of reserved words or keywords that hold special meanings and cannot be used as regular identifiers. It is important to remember that these keywords must be spelled exactly as specified in the ChatFlow language and cannot be used as ordinary identifiers.</p>
+<p>Following are the keywords in ChatFlow:</p>
+<pre><code>flow        if          else        while       speak
+engage      handover    end         listen      for
+assign      to          true        false       match
+equals      larger      than        less        not
+timeout
 </code></pre>
-<p>You're now able to add any two numbers, and you'll
-always get a <code>float</code> as a result.</p>
+<h2 id="literals">Literals</h2>
+<p>In ChatFlow, literals are representations of constant values for certain built-in types.</p>
+<h3 id="string-literals">String Literals</h3>
+<p>String literals in ChatFlow are represented by sequences of characters enclosed within double quotation marks (<code>"</code>). They are used to denote textual data or strings.</p>
+<p>For example:</p>
+<pre><code>&quot;This is a string literal.&quot;
+&quot;Hello, world!&quot;
+&quot;12345&quot;
+&quot;Special characters: !@#$%^&amp;*()&quot;
+</code></pre>
+<p>String literals are commonly used for storing and manipulating textual data within ChatFlow scripts. They can be assigned to variables, passed as arguments to functions, concatenated, compared, and displayed as output during script execution.</p>
+<p>Make sure to enclose string literals within double quotation marks to indicate that they are strings.</p>
+<h3 id="number-literals">Number Literals</h3>
+<p>Number literals in ChatFlow are used to represent numeric values, including integers and floating-point numbers.</p>
+<p>Here is the BNF representation of number literals in ChatFlow:</p>
+<pre><code>NUMBER_LITERAL ::= SIGNED_NUMBER
+SIGNED_NUMBER ::= [&quot;+&quot;|&quot;-&quot;] NUMBER
+NUMBER ::= FLOAT | INT
+FLOAT ::= INT _EXP | DECIMAL _EXP?
+_EXP ::= (&quot;e&quot;|&quot;E&quot;) SIGNED_INT
+SIGNED_FLOAT ::= [&quot;+&quot;|&quot;-&quot;] FLOAT
+DECIMAL ::= INT &quot;.&quot; INT? | &quot;.&quot; INT
+SIGNED_INT ::= [&quot;+&quot;|&quot;-&quot;] INT
+</code></pre>
+<p>These rules define the syntax for representing number literals in ChatFlow, allowing for the representation of both integers and floating-point numbers.</p>
 
 
 

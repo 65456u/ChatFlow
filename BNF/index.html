@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../concepts/">
+        <link rel="prev" href="../statement/">
       
       
         <link rel="next" href="../reference/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Advanced - ChatFlow</title>
+        <title>Definition - ChatFlow</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#bnf-definition-of-chatflow" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advanced
+              Definition
             
           </span>
         </div>
@@ -228,31 +233,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../grammar/" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Grammar
   </span>
   
 
-      </a>
-    </li>
-  
-
-    
-      
-      
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Grammar
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
   
   
     <li class="md-nav__item">
-      <a href="../concepts/" class="md-nav__link">
+      <a href="../structure/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Concepts
+    Structure
   </span>
   
 
@@ -260,9 +304,52 @@
     </li>
   
 
-    
-      
-      
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lexical/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lexical Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../statement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
@@ -274,16 +361,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Advanced
+    Definition
   </span>
   
 
       </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -346,6 +443,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -360,9 +459,126 @@
                   
 
 
-  <h1>Advanced</h1>
+<h1 id="bnf-definition-of-chatflow">BNF Definition of ChatFlow</h1>
+<p>Following is the BNF definition of ChatFlow:</p>
+<pre><code>chatflow         : flow+
 
+flow             : &quot;flow&quot; flow_name &quot;{&quot; block &quot;}&quot;
 
+block            : statement*
+
+statement        : if_statement
+                 | speak_statement
+                 | engage_statement
+                 | handover_statement
+                 | end_statement
+                 | listen_statement
+                 | assign_statement
+                 | while_statement
+                 | store_statement
+                 | fetch_statement
+                 | &quot;{&quot; block &quot;}&quot;
+
+store_statement  : &quot;store&quot; value
+
+fetch_statement  : &quot;fetch&quot; variable
+
+if_statement     : &quot;if&quot; condition &quot;{&quot; block &quot;}&quot; else_statement?
+
+else_statement   : &quot;else&quot; &quot;{&quot; block &quot;}&quot;
+                 | &quot;else&quot; if_statement
+
+while_statement  : &quot;while&quot; condition &quot;{&quot; block &quot;}&quot;
+
+speak_statement  : &quot;speak&quot; str_expression
+
+str_expression   : value ( &quot;+&quot; value )*
+
+engage_statement : &quot;engage&quot; flow_name
+
+handover_statement : &quot;handover&quot; tributary_name
+
+end_statement    : &quot;end&quot;
+
+listen_statement : &quot;listen&quot; &quot;for&quot; variable ( &quot;for&quot; time )?
+
+assign_statement : &quot;assign&quot; expression &quot;to&quot; variable
+
+condition        : match_compare
+                 | equal_compare
+                 | larger_compare
+                 | less_compare
+                 | boolean
+                 | timeout
+                 | &quot;not&quot; condition
+
+larger_compare   : expression &quot;larger&quot; &quot;than&quot; expression
+
+less_compare     : expression &quot;less&quot; &quot;than&quot; expression 
+
+boolean          : TRUE
+                 | FALSE
+
+TRUE             : &quot;true&quot;
+
+FALSE            : &quot;false&quot;
+
+match_compare    : expression &quot;match&quot; value ( &quot;as&quot; variable )?
+
+equal_compare    : expression &quot;equals&quot; expression
+
+expression       : term ( add_sub_operator term )*
+
+term             : factor ( mul_div_operator factor )*
+
+factor           : value
+                 | &quot;(&quot; expression &quot;)&quot;
+
+add_sub_operator : PLUS | MINUS
+
+mul_div_operator : TIMES | DIVIDE
+
+TIMES            : &quot;*&quot;
+
+DIVIDE           : &quot;/&quot;
+
+PLUS             : &quot;+&quot;
+
+MINUS            : &quot;-&quot;
+
+value            : timeout
+                 | literal
+                 | variable
+
+variable         : identifier
+
+identifier       : IDENTIFIER_TOKEN
+
+flow_name        : identifier
+
+tributary_name   : identifier
+
+time             : value time_unit
+
+time_unit        : second | minute | hour
+
+second           : &quot;s&quot;
+
+minute           : &quot;m&quot;
+
+hour             : &quot;h&quot;
+
+timeout          : &quot;timeout&quot;
+
+comparison_operator : &quot;equals&quot; | &quot;larger&quot; &quot;than&quot; | &quot;less&quot; &quot;than&quot;
+
+literal          : STRING_LITERAL
+                 | NUMBER_LITERAL
+
+IDENTIFIER_TOKEN : /[a-zA-Z_][a-zA-Z0-9_]*/
+STRING_LITERAL   : /\&quot;(\\.|[^&quot;\n])*\&quot;/
+NUMBER_LITERAL   : SIGNED_NUMBER
+</code></pre>
 
 
 
