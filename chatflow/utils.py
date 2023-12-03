@@ -44,6 +44,14 @@ async def timeout_checker(timeout):
 
 
 async def a_read_input_with_timeout(timeout=None):
+    """Reads input from the user with an optional timeout.
+
+    Args:
+        timeout (int, optional): The timeout value in seconds. Defaults to None.
+
+    Returns:
+        str: The input message from the user if received within the timeout, None otherwise.
+    """
     if timeout is None:
         return input()
     else:
@@ -61,6 +69,14 @@ async def a_read_input_with_timeout(timeout=None):
 
 
 def read_input_with_timeout(timeout=None):
+    """Reads user input with an optional timeout.
+
+    Args:
+        timeout (float, optional): The timeout value in seconds. Defaults to None.
+
+    Returns:
+        str: The user input if received within the timeout, None otherwise.
+    """
     try:
         if timeout is None:
             message = input()
@@ -81,7 +97,20 @@ async def aprint(*args, **kwargs):
     print(*args, **kwargs, flush=True)
 
 
+import inspect
+
 async def a_call_function(func, *args, **kwargs):
+    """
+    Calls a function, either synchronously or asynchronously, depending on the type of the function.
+
+    Args:
+        func (callable): The function to be called.
+        *args: Positional arguments to be passed to the function.
+        **kwargs: Keyword arguments to be passed to the function.
+
+    Returns:
+        The result of the function call.
+    """
     if inspect.iscoroutinefunction(func):
         result = await func(*args, **kwargs)
     else:
@@ -90,7 +119,26 @@ async def a_call_function(func, *args, **kwargs):
     return result
 
 
+import inspect
+import asyncio
+
 def call_function(func, *args, **kwargs):
+    """Call a function and return the result.
+
+    This function takes a function `func` as input along with any additional
+    arguments and keyword arguments. It checks if the function is a coroutine
+    function and runs it using asyncio if it is. Otherwise, it simply calls
+    the function and returns the result.
+
+    Args:
+        func (callable): The function to be called.
+        *args: Additional positional arguments to be passed to the function.
+        **kwargs: Additional keyword arguments to be passed to the function.
+
+    Returns:
+        Any: The result of calling the function.
+
+    """
     if inspect.iscoroutinefunction(func):
         result = asyncio.run(func(*args, **kwargs))
     else:

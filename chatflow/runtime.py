@@ -4,40 +4,40 @@ from .utils import *
 
 
 class Runtime:
-    """Runtime for ChatFlow
-
-    The Runtime class is responsible for executing the ChatFlow program. It manages the flow of execution,
-    handles statements and blocks, and maintains the symbol table and context stack.
-
-    Args:
-        interpreter (Interpreter): The interpreter object.
-        speak_function (callable, optional): The function used for speaking. Defaults to print.
-        listen_function (callable, optional): The function used for listening. Defaults to read_input_with_timeout.
-
+    """
+    The Runtime class represents the execution environment for the ChatFlow program.
+    
     Attributes:
-        tree (lark.Tree): The tree representing the ChatFlow program.
+        tree (lark.Tree): The abstract syntax tree of the ChatFlow program.
+        flow_dict (dict): A dictionary mapping flow names to their corresponding blocks.
+        exit (bool): A flag indicating whether the chat flow should exit.
+        contextStack (list): A stack of context objects representing the execution context.
         speak_function (callable): The function used for speaking.
         listen_function (callable): The function used for listening.
-        flow_dict (dict): A dictionary mapping flow names to their corresponding blocks.
-        exit (bool): A boolean value indicating whether the program should exit.
-        contextStack (list): A list of Context objects representing the context stack.
 
     Methods:
-        init__: Initialize the Runtime object.
-        register_flow: Register the flows defined in the ChatFlow program.
-        run: Run the ChatFlow program starting from the 'origin' flow.
-        run_flow: Run a specific flow in the ChatFlow program.
-        run_block: Run a block of statements in the ChatFlow program.
-        run_statement: Run a single statement in the ChatFlow program.
-        run_if: Run an if statement in the ChatFlow program.
-        run_else: Run an else statement in the ChatFlow program.
-        run_engage: Run an engage statement in the ChatFlow program.
-        run_while: Run a while statement in the ChatFlow program.
-
+        __init__(self, interpreter, speak_function=None, listen_function=None): Initializes the Runtime object.
+        register_flow(self): Registers the flows defined in the ChatFlow program.
+        run(self): Runs the chat flow.
+        arun(self): Runs the chat flow asynchronously.
+        arun_flow(self, flow_name, parameter=None): Runs a specific flow in the ChatFlow program asynchronously.
+        run_flow(self, flow_name, parameter=None): Runs a specific flow in the ChatFlow program.
+        arun_block(self, block, context): Runs a block of statements in the ChatFlow program asynchronously.
+        run_block(self, block, context): Runs a block of statements in the ChatFlow program.
+        run_statement(self, statement, context): Runs a single statement in the ChatFlow program.
+        arun_statement(self, statement, context): Runs a single statement in the ChatFlow program asynchronously.
+        arun_if(self, statement, context): Runs an if statement in the ChatFlow program asynchronously.
+        run_if(self, statement, context): Runs an if statement in the ChatFlow program.
+        arun_else(self, statement, context): Runs an else statement in the ChatFlow program asynchronously.
+        run_else(self, statement, context): Runs an else statement in the ChatFlow program.
+        arun_engage(self, statement, context): Runs an engage statement in the ChatFlow program asynchronously.
+        run_engage(self, statement, context): Runs an engage statement in the ChatFlow program.
+        arun_while(self, statement, context): Runs a while statement in the ChatFlow program asynchronously.
+        run_while(self, statement, context): Runs a while statement in the ChatFlow program.
     """
 
     def __init__(
-            self, interpreter, speak_function=None, listen_function=None, async_flag=False
+            self, interpreter, speak_function=None, listen_function=None
     ):
         """Initialize the Runtime object.
 
@@ -52,21 +52,8 @@ class Runtime:
         self.exit = False
         self.register_flow()
         self.contextStack = []
-        self.async_flag = async_flag
-        if speak_function is None:
-            if async_flag:
-                self.speak_function = aprint
-            else:
-                self.speak_function = print
-        else:
-            self.speak_function = speak_function
-        if listen_function is None:
-            if async_flag:
-                self.listen_function = a_read_input_with_timeout
-            else:
-                self.listen_function = read_input_with_timeout
-        else:
-            self.listen_function = listen_function
+        self.speak_function = speak_function
+        self.listen_function = listen_function
 
     def register_flow(self):
         """
@@ -78,9 +65,32 @@ class Runtime:
             self.flow_dict[flow_name] = block
 
     def run(self):
+        """
+        Runs the chat flow.
+
+        If the speak_function is not provided, it defaults to the print function.
+        If the listen_function is not provided, it defaults to the read_input_with_timeout function.
+
+        The chat flow starts from the "origin" flow.
+        """
+        if self.speak_function is None:
+            self.speak_function = print
+        if self.listen_function is None:
+            self.listen_function = read_input_with_timeout
         self.run_flow("origin")
 
     async def arun(self):
+        """Runs the chatflow asynchronously.
+
+        This method is responsible for executing the chatflow asynchronously.
+        It sets the default speak and listen functions if not provided,
+        and then calls the `arun_flow` method to start the chatflow.
+
+        """
+        if self.speak_function is None:
+            self.speak_function = aprint
+        if self.listen_function is None:
+            self.listen_function = a_read_input_with_timeout
         await self.arun_flow("origin")
 
     async def arun_flow(self, flow_name, parameter=None):

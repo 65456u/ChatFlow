@@ -1,3 +1,4 @@
+import asyncio
 from chatflow import Interpreter, register_tributary, Runtime
 
 
@@ -17,24 +18,7 @@ def comment_collector(context, speak_function, listen_function):
 
 
 code = """
-# hello
-flow origin {
-    # Variables declared within the origin flow block
-    assign "John" to name
-    assign 25 to age
 
-    # Start of a block
-    {
-        # Variable declared within the block
-        assign "Smith" to lastName
-
-        speak "Full name: " + name + " " + lastName
-        speak "Age: " + age
-    }  # End of the block
-
-    # The following line will cause an error because lastName is not accessible here
-    speak "Last name: " + lastName
-}
 """
 
 
@@ -46,12 +30,19 @@ def create_my_speak(initial=0):
 
     return my_speak_function
 
+async def create_my_speak_async(initial=0):
+    def my_speak_function(message):
+        nonlocal initial
+        initial += 1
+        aprint(initial, message)
 
-def main():
+    return my_speak_function
+
+async def main():
     interpreter = Interpreter(code=code)
-    runtime = Runtime(interpreter, speak_function=create_my_speak())
-    runtime.run()
+    runtime = Runtime(interpreter)
+    await runtime.arun()
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())

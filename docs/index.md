@@ -2,21 +2,23 @@
 
 ChatFlow is a domain-specific language designed specifically for authoring conversational dialog flows, such as for chatbots and voice assistants. 
 
-It utilizes an easy to read declarative format to define different conversation flows, the actions within them, and how they connect together. This makes it intuitive for developers to visualize and manage complex dialog logic.
+It provides an easy to read and write syntax that models natural conversations, with abstractions for common constructs needed for conversational interfaces. ChatFlow makes it simpler for non-programmers to define complex conversational experiences.
 
-Under the hood, ChatFlow scripts are compiled into an intermediate tree representation. The included runtime engine can then interpret and execute the conversation flows based on user inputs.
+The language can integrate tightly with Python enabling advanced functionality when required through custom code. ChatFlow aims to balance simplicity with versatility. 
 
-## Key Features
+## Key Features  
 
-- **Readability**: ChatFlow features a highly readable grammar that enables both developers and non-technical people to understand conversation logic. It uses English-like syntax following natural language constructs, which reduces the learning curve.
-    
-- **Integration**: ChatFlow provides rich integration capabilities with external systems via Python. It allows data processing in real-time during the conversation. Users can define custom execution flows named "tributaries", which enable integration with anything in Python including databases, APIs and more.
+- **Readability**: ChatFlow syntax reads like natural language to enable non-programmers to understand and author dialog flows.
 
-- **Interpreted**: ChatFlow scripts compile into an intermediate tree format, which enables analysis, optimization and detailed debug information.
-    
-- **Extensibility**: ChatFlow provides extension points to customize execution by defining tributaries.
+- **Easy to use**: The specialized DSL provides high-level abstractions tailored for conversations like dialog flows, conditional logic, variables, etc. making chatbot development intuitive.
 
-- **Information Flow**: ChatFlow follows one-way flow of information between flows, where data can only be passed from caller flows to callee flows. This improves modularity and hides complexity.
+- **Integration**: ChatFlow provides rich integration capabilities with external systems via Python. It allows data processing in real-time during the conversation. Users can define custom execution flows named "tributary", which enable integration with anything in Python including databases, APIs and more.
+
+- **Integration with python's async functionality**: ChatFlow enables asynchronous, non-blocking execution of dialogs via Python's async/await model. This allows I/O operations like API calls to run in parallel without blocking during a conversation.  
+
+- **Interpreted**: ChatFlow scripts are interpreted at runtime, enabling rapid prototyping. The interpreter provides early detection of errors in conversational logic during testing without needing compilation.
+
+- **Extensible**: Users can extend ChatFlow functionality by calling out to Python code within dialog scripts. This allows adding advanced or custom processing logic when needed.
 
 
 ## Learning ChatFlow
@@ -24,8 +26,6 @@ Under the hood, ChatFlow scripts are compiled into an intermediate tree represen
 1. [Quick Start](tutorials.md)
 2. [Tutorial](tutorials.md)
 3. [Grammar](grammar.md)
-4. [Concepts](concepts.md)
-5. [Advanced](advanced.md)
 
 
 ## Acknowledgements

@@ -75,7 +75,7 @@ def get_time(tree, context) -> int:
         tree (lark.Tree): The parse tree node representing the time value.
         context (Context): The context object containing variable values.
     Returns:
-        (int): The time value in seconds.
+        int: The time value in seconds.
     """
     timer = tree.children[0]
     timer = get_value(timer, context)
@@ -96,7 +96,7 @@ def get_flow_name(tree) -> str:
     Args:
         tree (lark.Tree): The parse tree node representing the flow name.
     Returns:
-        (str): The flow name.
+        str: The flow name.
     """
     name = get_identifier(tree.children[0])
     return name
@@ -108,7 +108,7 @@ def get_tributary_name(tree) -> str:
     Args:
         tree (lark.Tree): The parse tree node representing the tributary name.
     Returns:
-        (str): The tributary name.
+        str: The tributary name.
     """
     name = get_identifier(tree.children[0])
     return name
@@ -120,7 +120,7 @@ def get_boolean(condition):
     Args:
         condition (lark.Tree): The parse tree node representing the boolean value.
     Returns:
-        (bool): The boolean value.
+        bool: The boolean value.
     Raises:
         Exception: If the boolean value is unknown.
     """

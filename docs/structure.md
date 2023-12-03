@@ -1,6 +1,6 @@
 # Structure of ChatFlow Program
 
-The structure of a ChatFlow program is based on three key concepts: flow, block,statement, and tributary.
+The structure of a ChatFlow program is based on three key concepts: flow, block, statement, and tributary.
 
 ## Flow
 
@@ -9,8 +9,8 @@ A flow in ChatFlow represents a sequence of steps or actions that define the con
 The BNF (Backus-Naur Form) representation of a flow in ChatFlow is as follows:
 
 ```
-flow             ::= "flow" flow_name "{" block "}"
-flow_name        ::= identifier
+<flow> ::= "flow" <flow_name> "{" <block> "}"
+<flow_name> ::= <identifier>
 ```
 
 In this syntax, the "flow_name" is a user-defined identifier that uniquely identifies the flow within the program. It should be chosen to reflect the purpose or content of the flow. The "block" represents a collection of statements that define the actions and interactions within the flow. These statements can include if statements, speak statements, engage statements, handover statements, and more.
@@ -32,7 +32,7 @@ A block in ChatFlow is a series of statements grouped together within a flow. It
 The definition of a block in ChatFlow can be represented as:
 
 ```
-block            ::= statement*
+<flow> ::= "flow" <flow_name> "{" <block> "}"
 ```
 
 In this representation, "statement*" denotes zero or more statements within the block. Each statement represents a specific action or instruction within the flow.
@@ -72,16 +72,17 @@ A statement in ChatFlow is a basic unit of code that represents an action or ins
 The BNF representation of a statement in ChatFlow can be defined as:
 
 ```
-statement        ::= if_statement
-                   | speak_statement
-                   | engage_statement
-                   | handover_statement
-                   | end_statement
-                   | listen_statement
-                   | assign_statement
-                   | while_statement
-                   | store_statement
-                   | "{" block "}"
+<statement> ::= <if_statement>
+              | <speak_statement>  
+              | <engage_statement>
+              | <handover_statement>
+              | <end_statement>
+              | <listen_statement>
+              | <assign_statement>
+              | <while_statement>  
+              | <store_statement>
+              | <fetch_statement>
+              | "{" <block> "}"
 ```
 
 Each statement type has its own syntax and purpose within the ChatFlow program.

@@ -26,7 +26,9 @@ Identifiers are used to represent names in a programming language. In ChatFlow, 
 The pattern for identifiers in ChatFlow is defined using the following BNF notation:
 
 ```
-identifier_token ::= [a-zA-Z_][a-zA-Z0-9_]*
+IDENTIFIER ::= letter(letter | digit | "_")*
+letter ::= "A".."Z" | "a".."z"
+digit ::= "0".."9"  
 ```
 
 An identifier must start with a letter (uppercase or lowercase) or an underscore, followed by zero or more letters, digits, or underscores. This means that identifiers can include a combination of letters (both uppercase and lowercase), digits, and underscores, but they cannot start with a digit.
@@ -40,7 +42,7 @@ flow        if          else        while       speak
 engage      handover    end         listen      for
 assign      to          true        false       match
 equals      larger      than        less        not
-timeout
+timeout     store       fetch
 ```
 
 ## Literals
@@ -50,6 +52,14 @@ In ChatFlow, literals are representations of constant values for certain built-i
 ### String Literals
 
 String literals in ChatFlow are represented by sequences of characters enclosed within double quotation marks (`"`). They are used to denote textual data or strings.
+
+The BNF representation is as following:
+
+```
+STRING ::= '"' (letter | digit |punctuation)* '"'  
+```
+
+
 
 For example:
 
@@ -71,14 +81,24 @@ Number literals in ChatFlow are used to represent numeric values, including inte
 Here is the BNF representation of number literals in ChatFlow:
 
 ```
-NUMBER_LITERAL ::= SIGNED_NUMBER
-SIGNED_NUMBER ::= ["+"|"-"] NUMBER
-NUMBER ::= FLOAT | INT
-FLOAT ::= INT _EXP | DECIMAL _EXP?
-_EXP ::= ("e"|"E") SIGNED_INT
-SIGNED_FLOAT ::= ["+"|"-"] FLOAT
-DECIMAL ::= INT "." INT? | "." INT
-SIGNED_INT ::= ["+"|"-"] INT
+<NUMBER_LITERAL> ::= <SIGNED_NUMBER>
+
+<SIGNED_NUMBER> ::= ["+" | "-"] <NUMBER>
+
+<NUMBER> ::= <FLOAT> | <INT>  
+
+<FLOAT> ::= <INT> <_EXP> | <DECIMAL> <_EXP>?
+
+<_EXP> ::= ("e" | "E") <SIGNED_INT>
+
+<SIGNED_FLOAT> ::= ["+" | "-"] <FLOAT>  
+
+<DECIMAL> ::= <INT> "." <INT>? | "." <INT> 
+
+<SIGNED_INT> ::= ["+" | "-"] <INT>
+
+<INT> ::= digit+
+digit ::= "0"..."9"
 ```
 
 These rules define the syntax for representing number literals in ChatFlow, allowing for the representation of both integers and floating-point numbers.

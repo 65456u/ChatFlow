@@ -17,9 +17,18 @@ nav:
   - Quick Start: quick-start.md
   - Tutorial: tutorials.md
   - Grammar:
-    - Structure: structure.md
-    - Lexical Analysis: lexical.md
-    - Statements : statement.md
-    - Definition : BNF.md
-  - API Reference: reference.md
+      - Grammar: grammar.md
+      - Structure: structure.md
+      - Lexical Analysis: lexical.md
+      - Statements: statement.md
+      - Definition: BNF.md
+  - Async Support: async.md
+  - API Reference:
+      - References: references.md
+      - Interpreter: interpreter.md
+      - Runtime: runtime.md
+      - Context: context.md
+      - Executors: executors.md
+      - Utils: utils.md
+
   - License: LICENSE.md

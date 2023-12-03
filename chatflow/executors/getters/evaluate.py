@@ -63,6 +63,15 @@ def get_expression(expression, context):
 
 
 def get_str_expression(expression, context):
+    """Get the string representation of an expression.
+
+    Args:
+        expression (lark.Tree): The expression to evaluate.
+        context (Context): The context in which the expression is evaluated.
+
+    Returns:
+        result (str): The string representation of the evaluated expression.
+    """
     result = ""
     for child in expression.children:
         str_val = str(get_value(child, context))

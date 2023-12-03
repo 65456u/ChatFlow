@@ -18,7 +18,7 @@ def get_match_compare(condition, context):
         Exception: If the expression or value is not a string.
 
     Returns:
-        (bool): True if the expression matches the value, False otherwise.
+        result (bool): True if the expression matches the value, False otherwise.
     """
     expression = condition.children[0]
     expression = get_expression(expression, context)
@@ -44,7 +44,7 @@ def get_larger_compare(condition, context):
         condition (lark.Tree): the condition object
         context (Context): the context object
     Returns:
-        (bool): the result of the compare
+        bool: the result of the compare
     """
     first_expression = condition.children[0]
     second_expression = condition.children[1]
@@ -62,7 +62,7 @@ def get_less_compare(condition, context):
         context (Context): The context in which the condition is evaluated.
 
     Returns:
-        (bool): True if the first value is less than the second value, False otherwise.
+        result (bool): True if the first value is less than the second value, False otherwise.
     """
     first_expression = condition.children[0]
     second_expression = condition.children[1]
@@ -80,7 +80,7 @@ def get_condition(condition, context):
         context (Context): The context dictionary.
 
     Returns:
-        (bool): The value of the condition.
+        result (bool): The value of the condition.
 
     """
     condition = condition.children[0]
@@ -110,7 +110,7 @@ def get_equal_compare(condition, context):
         context (Context): The context in which the comparison is performed.
 
     Returns:
-        (bool): True if the first value is equal to the second value, False otherwise.
+        result (bool): True if the first value is equal to the second value, False otherwise.
     """
     first_expression = condition.children[0]
     second_expression = condition.children[1]
