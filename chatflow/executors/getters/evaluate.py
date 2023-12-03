@@ -60,3 +60,11 @@ def get_expression(expression, context):
         elif operator.type == "MINUS":
             value -= term_value
     return value
+
+
+def get_str_expression(expression, context):
+    result = ""
+    for child in expression.children:
+        str_val = str(get_value(child, context))
+        result += str_val
+    return result

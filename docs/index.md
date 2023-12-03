@@ -22,9 +22,10 @@ Under the hood, ChatFlow scripts are compiled into an intermediate tree represen
 ## Learning ChatFlow
 
 1. [Quick Start](tutorials.md)
-2. [Grammar](grammar.md)
-3. [Concepts](concepts.md)
-4. [Advanced](advanced.md)
+2. [Tutorial](tutorials.md)
+3. [Grammar](grammar.md)
+4. [Concepts](concepts.md)
+5. [Advanced](advanced.md)
 
 
 ## Acknowledgements

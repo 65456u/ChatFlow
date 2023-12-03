@@ -2,6 +2,7 @@ import asyncio
 import inspect
 
 import aioconsole
+from inputimeout import inputimeout, TimeoutOccurred
 
 
 def format_string(input_str: str, context):
@@ -42,7 +43,7 @@ async def timeout_checker(timeout):
     await asyncio.sleep(timeout)
 
 
-async def read_input_with_timeout(timeout=None):
+async def a_read_input_with_timeout(timeout=None):
     if timeout is None:
         return input()
     else:
@@ -59,6 +60,17 @@ async def read_input_with_timeout(timeout=None):
             return None
 
 
+def read_input_with_timeout(timeout=None):
+    try:
+        if timeout is None:
+            message = input()
+        else:
+            message = inputimeout(prompt='', timeout=timeout)
+        return message
+    except TimeoutOccurred:
+        return None
+
+
 async def aprint(*args, **kwargs):
     """Prints the given arguments to the console.
 
@@ -69,10 +81,18 @@ async def aprint(*args, **kwargs):
     print(*args, **kwargs, flush=True)
 
 
-async def call_function(func, *args, **kwargs):
+async def a_call_function(func, *args, **kwargs):
     if inspect.iscoroutinefunction(func):
         result = await func(*args, **kwargs)
     else:
         result = func(*args, **kwargs)
 
+    return result
+
+
+def call_function(func, *args, **kwargs):
+    if inspect.iscoroutinefunction(func):
+        result = asyncio.run(func(*args, **kwargs))
+    else:
+        result = func(*args, **kwargs)
     return result

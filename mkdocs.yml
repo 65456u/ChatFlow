@@ -15,8 +15,11 @@ plugins:
 nav:
   - ChatFlow: index.md
   - Quick Start: quick-start.md
-  - Grammar: grammar.md
-  - Concepts: concepts.md
-  - Advanced: advanced.md
+  - Tutorial: tutorials.md
+  - Grammar:
+    - Structure: structure.md
+    - Lexical Analysis: lexical.md
+    - Statements : statement.md
+    - Definition : BNF.md
   - API Reference: reference.md
   - License: LICENSE.md

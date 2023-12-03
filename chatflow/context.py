@@ -7,7 +7,8 @@ class Context:
     """
 
     def __init__(self, parameter, tree):
-        """The constructor for the Context class.
+        """
+        The constructor for the Context class.
 
         Args:
             parameter (any): The parameter used to passed to and from other flows.
@@ -21,10 +22,22 @@ class Context:
         self.timeout = False
 
     def push_scope(self):
+        """
+        Pushes a new scope onto the stack.
+
+        This method appends an empty dictionary to the `scope` list and increments the `scope_count` variable.
+
+        """
         self.scope.append(dict())
         self.scope_count += 1
 
     def pop_scope(self):
+        """
+        Pops the topmost scope from the context.
+
+        This method removes the topmost scope from the context's scope stack.
+
+        """
         self.scope.pop()
         self.scope_count -= 1
 
@@ -32,7 +45,7 @@ class Context:
         for i in range(self.scope_count - 1, -1, -1):
             if name in self.scope[i]:
                 return self.scope[i][name]
-        return None
+        raise NameError(f"Name '{name}' is not defined")
 
     def set_variable(self, name, value):
         for i in range(self.scope_count - 1, -1, -1):
@@ -50,3 +63,6 @@ class Context:
 
     def __repr__(self):
         return str(self.scope)
+    
+    def set_parameter(self, parameter):
+        self.parameter = parameter

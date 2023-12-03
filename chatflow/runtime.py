@@ -37,7 +37,7 @@ class Runtime:
     """
 
     def __init__(
-            self, interpreter, speak_function=aprint, listen_function=read_input_with_timeout
+            self, interpreter, speak_function=None, listen_function=None, async_flag=False
     ):
         """Initialize the Runtime object.
 
@@ -48,12 +48,25 @@ class Runtime:
 
         """
         self.tree = interpreter.tree
-        self.speak_function = speak_function
-        self.listen_function = listen_function
         self.flow_dict = {}
         self.exit = False
         self.register_flow()
         self.contextStack = []
+        self.async_flag = async_flag
+        if speak_function is None:
+            if async_flag:
+                self.speak_function = aprint
+            else:
+                self.speak_function = print
+        else:
+            self.speak_function = speak_function
+        if listen_function is None:
+            if async_flag:
+                self.listen_function = a_read_input_with_timeout
+            else:
+                self.listen_function = read_input_with_timeout
+        else:
+            self.listen_function = listen_function
 
     def register_flow(self):
         """
@@ -64,13 +77,13 @@ class Runtime:
             block = flow.children[1]
             self.flow_dict[flow_name] = block
 
-    async def run(self):
-        """
-        Run the ChatFlow program starting from the 'origin' flow.
-        """
-        await self.run_flow("origin")
+    def run(self):
+        self.run_flow("origin")
 
-    async def run_flow(self, flow_name, parameter=None):
+    async def arun(self):
+        await self.arun_flow("origin")
+
+    async def arun_flow(self, flow_name, parameter=None):
         """
         Run a specific flow in the ChatFlow program.
 
@@ -83,10 +96,26 @@ class Runtime:
         tree = self.flow_dict[flow_name]
         context = Context(parameter, tree)
         self.contextStack.append(context)
-        await self.run_block(tree, context)
+        await self.arun_block(tree, context)
         self.contextStack.pop()
 
-    async def run_block(self, block, context):
+    def run_flow(self, flow_name, parameter=None):
+        """
+        Run a specific flow in the ChatFlow program.
+
+        Args:
+            flow_name (str): The name of the flow to run.
+            parameter (any, optional): The parameter to pass to the flow. Defaults to None.
+        """
+        if flow_name not in self.flow_dict:
+            raise Exception(f"Flow {flow_name} not found")
+        tree = self.flow_dict[flow_name]
+        context = Context(parameter, tree)
+        self.contextStack.append(context)
+        self.run_block(tree, context)
+        self.contextStack.pop()
+
+    async def arun_block(self, block, context):
         """
         Run a block of statements in the ChatFlow program.
 
@@ -98,9 +127,25 @@ class Runtime:
         for statement in block.children:
             if self.exit:
                 return
-            await self.run_statement(statement, context)
+            await self.arun_statement(statement, context)
 
-    async def run_statement(self, statement, context):
+    def run_block(self, block, context):
+        """
+        Run a block of statements in the ChatFlow program.
+
+        Args:
+            block (lark.Tree): The block of statements to run.
+            context (Context): The current context.
+        """
+        context.push_scope()
+        for statement in block.children:
+            if self.exit:
+                context.pop_scope()
+                return
+            self.run_statement(statement, context)
+        context.pop_scope()
+
+    def run_statement(self, statement, context):
         """
         Run a single statement in the ChatFlow program.
 
@@ -112,25 +157,66 @@ class Runtime:
         state_type = statement.data
         match state_type:
             case "speak_statement":
-                await run_speak(statement, context, self.speak_function)
+                run_speak(statement, context, self.speak_function)
             case "listen_statement":
-                await run_listen(statement, context, self.listen_function)
+                run_listen(statement, context, self.listen_function)
             case "if_statement":
-                await self.run_if(statement, context)
+                self.run_if(statement, context)
             case "engage_statement":
-                await self.run_engage(statement, context)
+                self.run_engage(statement, context)
             case "assign_statement":
                 run_assign(statement, context)
             case "end_statement":
                 self.exit = True
             case "handover_statement":
-                await run_handover(
+                run_handover(
                     statement, context, self.speak_function, self.listen_function
                 )
             case "while_statement":
-                await self.run_while(statement, context)
+                self.run_while(statement, context)
+            case "store_statement":
+                run_store(statement, context)
+            case "fetch_statement":
+                run_fetch(statement, context)
+            case "block":
+                self.run_block(statement, context)
+                    
 
-    async def run_if(self, statement, context):
+    async def arun_statement(self, statement, context):
+        """
+        Run a single statement in the ChatFlow program.
+
+        Args:
+            statement (lark.Tree): The statement to run.
+            context (Context): The current context.
+        """
+        statement = statement.children[0]
+        state_type = statement.data
+        match state_type:
+            case "speak_statement":
+                await arun_speak(statement, context, self.speak_function)
+            case "listen_statement":
+                await arun_listen(statement, context, self.listen_function)
+            case "if_statement":
+                await self.arun_if(statement, context)
+            case "engage_statement":
+                await self.arun_engage(statement, context)
+            case "assign_statement":
+                run_assign(statement, context)
+            case "end_statement":
+                self.exit = True
+            case "handover_statement":
+                await arun_handover(
+                    statement, context, self.speak_function, self.listen_function
+                )
+            case "while_statement":
+                await self.arun_while(statement, context)
+            case "store_statement":
+                run_store(statement, context)
+            case "block":
+                await self.arun_block(statement, context)
+
+    async def arun_if(self, statement, context):
         """
         Run an if statement in the ChatFlow program.
 
@@ -141,12 +227,28 @@ class Runtime:
         condition = statement.children[0]
         result = get_condition(condition, context)
         if result:
-            await self.run_block(statement.children[1], context)
+            await self.arun_block(statement.children[1], context)
         else:
             if len(statement.children) == 3:
-                await self.run_else(statement.children[2], context)
+                await self.arun_else(statement.children[2], context)
 
-    async def run_else(self, statement, context):
+    def run_if(self, statement, context):
+        """
+        Run an if statement in the ChatFlow program.
+
+        Args:
+            statement (lark.Tree): The if statement to run.
+            context (Context): The current context.
+        """
+        condition = statement.children[0]
+        result = get_condition(condition, context)
+        if result:
+            self.run_block(statement.children[1], context)
+        else:
+            if len(statement.children) == 3:
+                self.run_else(statement.children[2], context)
+
+    async def arun_else(self, statement, context):
         """
         Run an else statement in the ChatFlow program.
 
@@ -157,11 +259,26 @@ class Runtime:
         else_statement = statement.children[0]
         match else_statement.data:
             case "block":
-                await self.run_block(else_statement, context)
+                await self.arun_block(else_statement, context)
             case "if_statement":
-                await self.run_if(else_statement, context)
+                await self.arun_if(else_statement, context)
 
-    async def run_engage(self, statement, context):
+    def run_else(self, statement, context):
+        """
+        Run an else statement in the ChatFlow program.
+
+        Args:
+            statement (lark.Tree): The else statement to run.
+            context (Context): The current context.
+        """
+        else_statement = statement.children[0]
+        match else_statement.data:
+            case "block":
+                self.run_block(else_statement, context)
+            case "if_statement":
+                self.run_if(else_statement, context)
+
+    async def arun_engage(self, statement, context):
         """
         Run an engage statement in the ChatFlow program.
 
@@ -170,9 +287,20 @@ class Runtime:
             context (Context): The current context.
         """
         flow_name = get_flow_name(statement.children[0])
-        await self.run_flow(flow_name, context.get_parameter())
+        await self.arun_flow(flow_name, context.get_parameter())
 
-    async def run_while(self, statement, context):
+    def run_engage(self, statement, context):
+        """
+        Run an engage statement in the ChatFlow program.
+
+        Args:
+            statement (lark.Tree): The engage statement to run.
+            context (Context): The current context.
+        """
+        flow_name = get_flow_name(statement.children[0])
+        self.run_flow(flow_name, context.get_parameter())
+
+    async def arun_while(self, statement, context):
         """
         Run a while statement in the ChatFlow program.
 
@@ -182,4 +310,16 @@ class Runtime:
         """
         condition = statement.children[0]
         while get_condition(condition, context):
-            await self.run_block(statement.children[1], context)
+            await self.arun_block(statement.children[1], context)
+
+    def run_while(self, statement, context):
+        """
+        Run a while statement in the ChatFlow program.
+
+        Args:
+            statement (lark.Tree): The while statement to run.
+            context (Context): The current context.
+        """
+        condition = statement.children[0]
+        while get_condition(condition, context):
+            self.run_block(statement.children[1], context)

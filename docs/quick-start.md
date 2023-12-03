@@ -1,64 +1,88 @@
-## Install
+## Installation
 
-Install from PyPI
+### Install using PyPI
 
-```
+You can install ChatFlow from PyPI using the following command:
+
+```shell
 pip install chatflow
 ```
 
-Install from source
+### Install from source
 
-```
-# clone this repository
+Alternatively, you can install it from the source code. First, clone the repository:
+
+```shell
 git clone https://github.com/65456u/ChatFlow.git
-# get into the repository
-cd ChatFlow  
-# install required packages
+cd ChatFlow
+```
+
+Then, install the required packages:
+
+```shell
 pip install -r requirements.txt
-# install ChatFlow  
+```
+
+Finally, install ChatFlow:
+
+```shell
 pip install .
 ```
 
-## First ChatFlow Program
+## Initializing the Interpreter
 
-Let's first write a simple ChatFlow that simply echos the input.
+To run a ChatFlow program, you need to create an `Interpreter` object using the ChatFlow code you have written.
 
-```
-flow origin {
-  listen for message
-  speak message  
-}
-```
-
-To run this:
+You can directly create an `Interpreter` object and pass the code as a string, like this:
 
 ```python
-from chatflow import Interpreter, Runtime
+from chatflow import Interpreter
 
 code = """
 flow origin {
-  listen for message
-  speak message
+  speak "Hello, world!" 
 }
 """
 
 interpreter = Interpreter(code=code)
-runtime = Runtime(interpreter)
-runtime.run() 
 ```
 
-## Usage
+Alternatively, you can create an `Interpreter` object by specifying the path to a file containing your ChatFlow code:
 
-Key concepts:  
+```python
+interpreter = Interpreter(code_path="hello.flow")
+```
 
-- `flow` defines a conversation flow
-- `listen` gets input from user
-- `speak` outputs message  
+## Creating a Runtime Instance
 
-This example shows:
+The `Runtime` class is responsible for executing the ChatFlow program.
 
-- Defining a simple `origin` flow
-- Listening for a `message` input
-- Speaking the message back to user
+You can create a `Runtime` instance by passing the `Interpreter` object along with your custom `speak` and `listen` functions. If you don't provide custom functions, the runtime will use the built-in default `speak` and `listen` methods.
 
-Check out the [docs](https://chatflow.readthedocs.io) to learn more!
+```python
+from chatflow import Interpreter, Runtime
+
+
+def my_speak_function(message):
+# Custom speak function implementation
+# ...
+
+def my_listen_function(timer):
+# Custom listen function implementation
+# ...
+
+
+runtime = Runtime(interpreter, my_speak_function, my_listen_function)
+```
+
+By providing your own `speak` and `listen` functions, you can customize the behavior of the ChatFlow program according to your needs.
+
+## Running the Program
+
+To execute the ChatFlow program, simply call the `run()` method on the `Runtime` instance:
+
+```python
+runtime.run()
+```
+
+This will start the execution of the ChatFlow program, which will proceed according to the defined flows and interactions specified in the code.

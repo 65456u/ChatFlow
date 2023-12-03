@@ -98,6 +98,8 @@ def get_condition(condition, context):
             return context.timeout
         case "boolean":
             return get_boolean(condition)
+        case "condition":
+            return not get_condition(condition, context)
 
 
 def get_equal_compare(condition, context):
