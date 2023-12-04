@@ -76,6 +76,7 @@ def create_my_speak(initial=0):
 
 def main():
     interpreter = Interpreter(code_path="main.flow")
+    print(interpreter)
     runtime = Runtime(interpreter)
     runtime.run()
 

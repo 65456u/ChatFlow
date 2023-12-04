@@ -1,9 +1,4 @@
-flask~=3.0.0
-inputimeout~=1.0.4
-lark~=1.1.8
-chatflow~=0.1.0
-setuptools~=68.2.2
-aioconsole~=0.6.2
-uvicorn~=0.24.0.post1
-fastapi~=0.104.1
-pytest~=7.4.3
+inputimeout
+lark
+setuptools
+aioconsole
