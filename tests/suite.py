@@ -1,7 +1,7 @@
 from chatflow import Interpreter, Runtime
 
 
-class TestSuite:
+class FlowTest:
     def __init__(self, user_input, expected_spoken):
         self.user_input = user_input
         self.expected_spoken = expected_spoken
@@ -19,11 +19,11 @@ class TestSuite:
         return self.expected_spoken == self.spoken
 
 
-class TestCase:
+class ConversationScenario:
     def __init__(self, user_input, expected_spoken, code=None, code_path=None):
         self.code = code
         self.code_path = code_path
-        self.test_suite = TestSuite(user_input, expected_spoken)
+        self.test_suite = FlowTest(user_input, expected_spoken)
 
     def run(self):
         interpreter = Interpreter(code=self.code, code_path=self.code_path)

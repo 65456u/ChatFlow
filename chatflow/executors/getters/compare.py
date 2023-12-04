@@ -34,7 +34,10 @@ def get_match_compare(condition, context):
         result = re.search(value, expression)
         if result:
             context.set_variable(variable, result.group())
-        return True
+            return True
+        else:
+            context.set_variable(variable, None)
+            return False
 
 
 def get_larger_compare(condition, context):

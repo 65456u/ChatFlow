@@ -48,12 +48,21 @@ class Context:
         raise NameError(f"Name '{name}' is not defined")
 
     def set_variable(self, name, value):
-        for i in range(self.scope_count - 1, -1, -1):
-            if name in self.scope[i]:
-                self.scope[i][name] = value
-                return False
-        self.scope[self.scope_count - 1][name] = value
-        return True
+            """Set the value of a variable in the context.
+
+            Args:
+                name (str): The name of the variable.
+                value (Any): The value to assign to the variable.
+
+            Returns:
+                bool: True if the variable was successfully set, False otherwise.
+            """
+            for i in range(self.scope_count - 1, -1, -1):
+                if name in self.scope[i]:
+                    self.scope[i][name] = value
+                    return False
+            self.scope[self.scope_count - 1][name] = value
+            return True
 
     def get_parameter(self):
         return self.parameter
@@ -66,3 +75,4 @@ class Context:
     
     def set_parameter(self, parameter):
         self.parameter = parameter
+        

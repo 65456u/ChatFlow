@@ -6,7 +6,7 @@ from suite import *
 
 def while_test():
     expected_spoken = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-    testCase = TestCase([], expected_spoken, code_path="while_test.flow")
+    testCase = ConversationScenario([], expected_spoken, code_path="while_test.flow")
     result = testCase.run()
     assert result
 
@@ -14,7 +14,7 @@ def while_test():
 def scope_test():
     user_input = []
     expected_spoken = ["spoke Full name: John Smith", "spoke Age: 25"]
-    testCase = TestCase(user_input, expected_spoken, code_path="scope_test.flow")
+    testCase = ConversationScenario(user_input, expected_spoken, code_path="scope_test.flow")
     with pytest.raises(NameError):
         testCase.run()
 
@@ -22,7 +22,7 @@ def scope_test():
 def engage_test():
     user_input = []
     expected_spoken = ["engaged"]
-    testCase = TestCase(user_input, expected_spoken, code_path="engage_test.flow")
+    testCase = ConversationScenario(user_input, expected_spoken, code_path="engage_test.flow")
     result = testCase.run()
     assert result
 
@@ -30,17 +30,17 @@ def engage_test():
 def branch_test():
     user_input = ["start"]
     expected_spoken = ["start"]
-    testCase = TestCase(user_input, expected_spoken, code_path="branch_test.flow")
+    testCase = ConversationScenario(user_input, expected_spoken, code_path="branch_test.flow")
     result = testCase.run()
     assert result
     user_input = ["final"]
     expected_spoken = ["final"]
-    testCase = TestCase(user_input, expected_spoken, code_path="branch_test.flow")
+    testCase = ConversationScenario(user_input, expected_spoken, code_path="branch_test.flow")
     result = testCase.run()
     assert result
     user_input = ["end"]
     expected_spoken = ["default"]
-    testCase = TestCase(user_input, expected_spoken, code_path="branch_test.flow")
+    testCase = ConversationScenario(user_input, expected_spoken, code_path="branch_test.flow")
     result = testCase.run()
     assert result
 
@@ -54,7 +54,7 @@ def tributary(context, speak_function, listen_function):
 def handover_test():
     user_input = []
     expected_spoken = ["test", "para"]
-    testCase = TestCase(user_input, expected_spoken, code_path="handover_test.flow")
+    testCase = ConversationScenario(user_input, expected_spoken, code_path="handover_test.flow")
     result = testCase.run()
     assert result
 
@@ -62,7 +62,7 @@ def handover_test():
 def match_test():
     user_input = ["6633人"]
     expected_spoken = ["6633"]
-    testCase = TestCase(user_input, expected_spoken, code_path="match_test.flow")
+    testCase = ConversationScenario(user_input, expected_spoken, code_path="match_test.flow")
     result = testCase.run()
     assert result
 

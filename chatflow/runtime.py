@@ -222,6 +222,8 @@ class Runtime:
                 await self.arun_while(statement, context)
             case "store_statement":
                 run_store(statement, context)
+            case "fetch_statement":
+                run_fetch(statement, context)
             case "block":
                 await self.arun_block(statement, context)
 
@@ -319,6 +321,8 @@ class Runtime:
         """
         condition = statement.children[0]
         while get_condition(condition, context):
+            if self.exit:
+                return
             await self.arun_block(statement.children[1], context)
 
     def run_while(self, statement, context):

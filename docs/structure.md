@@ -32,7 +32,7 @@ A block in ChatFlow is a series of statements grouped together within a flow. It
 The definition of a block in ChatFlow can be represented as:
 
 ```
-<flow> ::= "flow" <flow_name> "{" <block> "}"
+<block> ::= <statement>*
 ```
 
 In this representation, "statement*" denotes zero or more statements within the block. Each statement represents a specific action or instruction within the flow.

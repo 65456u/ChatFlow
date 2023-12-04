@@ -30,6 +30,13 @@ def s2n(context, speak_function, listen_function):
     context.set_parameter(number)
 
 
+@register_tributary("recharge")
+def recharge(context, speak_function, listen_function):
+    amount = context.get_parameter()
+    print("recharging", amount, "yuan")
+    print("recharge success")
+
+
 code = r"""
 flow origin {
     speak "guess a number between 1 and 100"
@@ -68,7 +75,7 @@ def create_my_speak(initial=0):
 
 
 def main():
-    interpreter = Interpreter(code=code)
+    interpreter = Interpreter(code_path="main.flow")
     runtime = Runtime(interpreter)
     runtime.run()
 
