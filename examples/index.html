@@ -851,10 +851,13 @@
 <p>The "generate_random_number" tributary is handed over control to generate a random number between 1-100 and store it in the context.</p>
 </li>
 <li>
+<p>The number in the parameter of the Context is stored into number by <code>fetch number</code></p>
+</li>
+<li>
 <p>A while loop begins which iterates until the user guesses the correct number.</p>
 </li>
 <li>
-<p>In each iteration, the user's input is listened to and validated as a number.</p>
+<p>In each iteration, the user's input is listened to, stored into parameter, processed by <code>string_to_number</code>  tributary, re-stored into num, and validated as a number.</p>
 </li>
 <li>
 <p>The input is converted to an integer and compared against the randomly generated number:</p>
