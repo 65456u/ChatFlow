@@ -777,7 +777,7 @@
 <h2 id="block">Block</h2>
 <p>A block in ChatFlow is a series of statements grouped together within a flow. It represents a section of code that is executed sequentially. A block is enclosed within curly braces and can contain multiple statements.</p>
 <p>The definition of a block in ChatFlow can be represented as:</p>
-<pre><code>&lt;flow&gt; ::= &quot;flow&quot; &lt;flow_name&gt; &quot;{&quot; &lt;block&gt; &quot;}&quot;
+<pre><code>&lt;block&gt; ::= &lt;statement&gt;*
 </code></pre>
 <p>In this representation, "statement*" denotes zero or more statements within the block. Each statement represents a specific action or instruction within the flow.</p>
 <p>When you create a block, any variables declared within that block are only accessible within that block's scope. They are not visible outside of the block or in other blocks within the flow.</p>
