@@ -1,6 +1,6 @@
 ## Installation
 
-### Install using PyPI
+### ~~Install using PyPI~~
 
 You can install ChatFlow from PyPI using the following command:
 
