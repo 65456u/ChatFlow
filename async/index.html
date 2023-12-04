@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../structure/">
+        <link rel="prev" href="../BNF/">
       
       
-        <link rel="next" href="../statement/">
+        <link rel="next" href="../references/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Lexical Analysis - ChatFlow</title>
+        <title>Async Support - ChatFlow</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lexical-analysis" class="md-skip">
+        <a href="#async-support" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lexical Analysis
+              Async Support
             
           </span>
         </div>
@@ -250,21 +250,19 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -278,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Grammar
@@ -331,30 +329,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Lexical Analysis
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lexical/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -363,77 +341,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#comment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifiers-and-keywords" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifiers and Keywords
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#literals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Literals
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Literals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#string-literals" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Literals
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#number-literals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Number Literals
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -492,10 +399,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../async/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -504,6 +420,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -718,65 +635,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#comment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifiers-and-keywords" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifiers and Keywords
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#literals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Literals
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Literals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#string-literals" class="md-nav__link">
-    <span class="md-ellipsis">
-      String Literals
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#number-literals" class="md-nav__link">
-    <span class="md-ellipsis">
-      Number Literals
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -790,73 +648,33 @@
                   
 
 
-<h1 id="lexical-analysis">Lexical Analysis</h1>
-<p>Lexical analysis is the first phase of the ChatFlow language processing. It involves breaking down the source code into tokens, which are the smallest meaningful units of the language. The lexer, also known as the tokenizer, scans the source code character by character and groups them into tokens based on predefined patterns and rules.</p>
-<h2 id="comment">Comment</h2>
-<p>In ChatFlow, comments are denoted by a hash character (<code>#</code>) followed by the comment text. They can be used to provide explanations, document the code, or temporarily disable specific parts of the flow. Comments in ChatFlow are ignored by the language's interpreter and have no impact on the program's behavior or execution.</p>
-<p>For example:</p>
-<pre><code>flow origin {
-    # This is a comment explaining the purpose of this flow
-    speak &quot;Hello, world!&quot; # This line speaks a greeting message
-    # The following line is commented out to disable its execution
-    # listen for name
-}
+<h1 id="async-support"><strong>Async Support</strong></h1>
+<p>ChatFlow supports async mode in Python out of the box. To enable asynchronous execution of ChatFlow programs, you just need to use <code>Runtime.arun()</code> instead of <code>Runtime.run()</code>. </p>
+<p>For example, the following synchronous program:</p>
+<pre><code>def main():
+    interpreter = Interpreter(code=code)
+    runtime = Runtime(interpreter)
+    runtime.run()
+
+if __name__ == "__main__":
+    main()
 </code></pre>
-<p>In the above example, the comments provide additional information about the flow and the code. The interpreter ignores these comments, ensuring they don't affect the execution of the ChatFlow program.</p>
-<h2 id="identifiers-and-keywords">Identifiers and Keywords</h2>
-<p>Identifiers are used to represent names in a programming language. In ChatFlow, an identifier is defined as a sequence of characters that follows a specific pattern.</p>
-<p>The pattern for identifiers in ChatFlow is defined using the following BNF notation:</p>
-<pre><code>IDENTIFIER ::= letter(letter | digit | &quot;_&quot;)*
-letter ::= &quot;A&quot;..&quot;Z&quot; | &quot;a&quot;..&quot;z&quot;
-digit ::= &quot;0&quot;..&quot;9&quot;  
+<p>can be easily tranformed into asynchronous mode:</p>
+<pre><code>async def main():
+    interpreter = Interpreter(code=code) 
+    runtime = Runtime(interpreter, async_flag=True)
+    await runtime.arun()
+
+if __name__ == "__main__":
+    asyncio.run(main())
 </code></pre>
-<p>An identifier must start with a letter (uppercase or lowercase) or an underscore, followed by zero or more letters, digits, or underscores. This means that identifiers can include a combination of letters (both uppercase and lowercase), digits, and underscores, but they cannot start with a digit.</p>
-<p>ChatFlow also has a set of reserved words or keywords that hold special meanings and cannot be used as regular identifiers. It is important to remember that these keywords must be spelled exactly as specified in the ChatFlow language and cannot be used as ordinary identifiers.</p>
-<p>Following are the keywords in ChatFlow:</p>
-<pre><code>flow        if          else        while       speak
-engage      handover    end         listen      for
-assign      to          true        false       match
-equals      larger      than        less        not
-timeout     store       fetch
-</code></pre>
-<h2 id="literals">Literals</h2>
-<p>In ChatFlow, literals are representations of constant values for certain built-in types.</p>
-<h3 id="string-literals">String Literals</h3>
-<p>String literals in ChatFlow are represented by sequences of characters enclosed within double quotation marks (<code>"</code>). They are used to denote textual data or strings.</p>
-<p>The BNF representation is as following:</p>
-<pre><code>STRING ::= '&quot;' (letter | digit |punctuation)* '&quot;'  
-</code></pre>
-<p>For example:</p>
-<pre><code>&quot;This is a string literal.&quot;
-&quot;Hello, world!&quot;
-&quot;12345&quot;
-&quot;Special characters: !@#$%^&amp;*()&quot;
-</code></pre>
-<p>String literals are commonly used for storing and manipulating textual data within ChatFlow scripts. They can be assigned to variables, passed as arguments to functions, concatenated, compared, and displayed as output during script execution.</p>
-<p>Make sure to enclose string literals within double quotation marks to indicate that they are strings.</p>
-<h3 id="number-literals">Number Literals</h3>
-<p>Number literals in ChatFlow are used to represent numeric values, including integers and floating-point numbers.</p>
-<p>Here is the BNF representation of number literals in ChatFlow:</p>
-<pre><code>&lt;NUMBER_LITERAL&gt; ::= &lt;SIGNED_NUMBER&gt;
-
-&lt;SIGNED_NUMBER&gt; ::= [&quot;+&quot; | &quot;-&quot;] &lt;NUMBER&gt;
-
-&lt;NUMBER&gt; ::= &lt;FLOAT&gt; | &lt;INT&gt;  
-
-&lt;FLOAT&gt; ::= &lt;INT&gt; &lt;_EXP&gt; | &lt;DECIMAL&gt; &lt;_EXP&gt;?
-
-&lt;_EXP&gt; ::= (&quot;e&quot; | &quot;E&quot;) &lt;SIGNED_INT&gt;
-
-&lt;SIGNED_FLOAT&gt; ::= [&quot;+&quot; | &quot;-&quot;] &lt;FLOAT&gt;  
-
-&lt;DECIMAL&gt; ::= &lt;INT&gt; &quot;.&quot; &lt;INT&gt;? | &quot;.&quot; &lt;INT&gt; 
-
-&lt;SIGNED_INT&gt; ::= [&quot;+&quot; | &quot;-&quot;] &lt;INT&gt;
-
-&lt;INT&gt; ::= digit+
-digit ::= &quot;0&quot;...&quot;9&quot;
-</code></pre>
-<p>These rules define the syntax for representing number literals in ChatFlow, allowing for the representation of both integers and floating-point numbers.</p>
+<p>You can also define your custom async speak and listen functions as well as async tributaries.</p>
+<p>In summary, ChatFlow enables:</p>
+<ul>
+<li>Async mode with simple Runtime swap</li>
+<li>Custom async speak, listen and tributaries</li>
+<li>Asynchronous, non-blocking execution</li>
+</ul>
 
 
 

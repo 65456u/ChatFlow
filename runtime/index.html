@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../BNF/">
+        <link rel="prev" href="../interpreter/">
       
       
-        <link rel="next" href="../LICENSE/">
+        <link rel="next" href="../context/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>API Reference - ChatFlow</title>
+        <title>Runtime - ChatFlow</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chatflow" class="md-skip">
+        <a href="#chatflow.runtime" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API Reference
+              Runtime
             
           </span>
         </div>
@@ -290,6 +290,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../grammar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grammar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../structure/" class="md-nav__link">
         
   
@@ -378,6 +399,107 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../async/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Async Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API Reference
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interpreter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interpreter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -392,7 +514,7 @@
           
   
   <span class="md-ellipsis">
-    API Reference
+    Runtime
   </span>
   
 
@@ -403,7 +525,7 @@
         
   
   <span class="md-ellipsis">
-    API Reference
+    Runtime
   </span>
   
 
@@ -423,25 +545,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chatflow" class="md-nav__link">
+  <a href="#chatflow.runtime" class="md-nav__link">
     <span class="md-ellipsis">
-      chatflow
+      runtime
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#chatflow.Interpreter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interpreter
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chatflow.Runtime" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime" class="md-nav__link">
     <span class="md-ellipsis">
       Runtime
     </span>
@@ -451,7 +564,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.__init__" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.__init__" class="md-nav__link">
     <span class="md-ellipsis">
       __init__()
     </span>
@@ -460,7 +573,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_block" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun" class="md-nav__link">
+    <span class="md-ellipsis">
+      arun()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatflow.runtime.Runtime.arun_block" class="md-nav__link">
     <span class="md-ellipsis">
       arun_block()
     </span>
@@ -469,7 +591,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_else" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_else" class="md-nav__link">
     <span class="md-ellipsis">
       arun_else()
     </span>
@@ -478,7 +600,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_engage" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_engage" class="md-nav__link">
     <span class="md-ellipsis">
       arun_engage()
     </span>
@@ -487,7 +609,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_flow" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_flow" class="md-nav__link">
     <span class="md-ellipsis">
       arun_flow()
     </span>
@@ -496,7 +618,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_if" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_if" class="md-nav__link">
     <span class="md-ellipsis">
       arun_if()
     </span>
@@ -505,7 +627,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_statement" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_statement" class="md-nav__link">
     <span class="md-ellipsis">
       arun_statement()
     </span>
@@ -514,7 +636,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_while" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_while" class="md-nav__link">
     <span class="md-ellipsis">
       arun_while()
     </span>
@@ -523,7 +645,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.register_flow" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.register_flow" class="md-nav__link">
     <span class="md-ellipsis">
       register_flow()
     </span>
@@ -532,7 +654,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_block" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatflow.runtime.Runtime.run_block" class="md-nav__link">
     <span class="md-ellipsis">
       run_block()
     </span>
@@ -541,7 +672,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_else" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_else" class="md-nav__link">
     <span class="md-ellipsis">
       run_else()
     </span>
@@ -550,7 +681,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_engage" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_engage" class="md-nav__link">
     <span class="md-ellipsis">
       run_engage()
     </span>
@@ -559,7 +690,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_flow" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_flow" class="md-nav__link">
     <span class="md-ellipsis">
       run_flow()
     </span>
@@ -568,7 +699,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_if" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_if" class="md-nav__link">
     <span class="md-ellipsis">
       run_if()
     </span>
@@ -577,7 +708,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_statement" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_statement" class="md-nav__link">
     <span class="md-ellipsis">
       run_statement()
     </span>
@@ -586,7 +717,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_while" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_while" class="md-nav__link">
     <span class="md-ellipsis">
       run_while()
     </span>
@@ -599,36 +730,80 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#chatflow.register_tributary" class="md-nav__link">
-    <span class="md-ellipsis">
-      register_tributary()
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chatflow.executors" class="md-nav__link">
-    <span class="md-ellipsis">
-      executors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chatflow.executors.getters" class="md-nav__link">
-    <span class="md-ellipsis">
-      getters
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Context
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Executors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -679,25 +854,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chatflow" class="md-nav__link">
+  <a href="#chatflow.runtime" class="md-nav__link">
     <span class="md-ellipsis">
-      chatflow
+      runtime
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#chatflow.Interpreter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Interpreter
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chatflow.Runtime" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime" class="md-nav__link">
     <span class="md-ellipsis">
       Runtime
     </span>
@@ -707,7 +873,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.__init__" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.__init__" class="md-nav__link">
     <span class="md-ellipsis">
       __init__()
     </span>
@@ -716,7 +882,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_block" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun" class="md-nav__link">
+    <span class="md-ellipsis">
+      arun()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatflow.runtime.Runtime.arun_block" class="md-nav__link">
     <span class="md-ellipsis">
       arun_block()
     </span>
@@ -725,7 +900,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_else" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_else" class="md-nav__link">
     <span class="md-ellipsis">
       arun_else()
     </span>
@@ -734,7 +909,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_engage" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_engage" class="md-nav__link">
     <span class="md-ellipsis">
       arun_engage()
     </span>
@@ -743,7 +918,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_flow" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_flow" class="md-nav__link">
     <span class="md-ellipsis">
       arun_flow()
     </span>
@@ -752,7 +927,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_if" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_if" class="md-nav__link">
     <span class="md-ellipsis">
       arun_if()
     </span>
@@ -761,7 +936,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_statement" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_statement" class="md-nav__link">
     <span class="md-ellipsis">
       arun_statement()
     </span>
@@ -770,7 +945,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.arun_while" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.arun_while" class="md-nav__link">
     <span class="md-ellipsis">
       arun_while()
     </span>
@@ -779,7 +954,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.register_flow" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.register_flow" class="md-nav__link">
     <span class="md-ellipsis">
       register_flow()
     </span>
@@ -788,7 +963,16 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_block" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run" class="md-nav__link">
+    <span class="md-ellipsis">
+      run()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatflow.runtime.Runtime.run_block" class="md-nav__link">
     <span class="md-ellipsis">
       run_block()
     </span>
@@ -797,7 +981,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_else" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_else" class="md-nav__link">
     <span class="md-ellipsis">
       run_else()
     </span>
@@ -806,7 +990,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_engage" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_engage" class="md-nav__link">
     <span class="md-ellipsis">
       run_engage()
     </span>
@@ -815,7 +999,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_flow" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_flow" class="md-nav__link">
     <span class="md-ellipsis">
       run_flow()
     </span>
@@ -824,7 +1008,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_if" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_if" class="md-nav__link">
     <span class="md-ellipsis">
       run_if()
     </span>
@@ -833,7 +1017,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_statement" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_statement" class="md-nav__link">
     <span class="md-ellipsis">
       run_statement()
     </span>
@@ -842,7 +1026,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#chatflow.Runtime.run_while" class="md-nav__link">
+  <a href="#chatflow.runtime.Runtime.run_while" class="md-nav__link">
     <span class="md-ellipsis">
       run_while()
     </span>
@@ -852,33 +1036,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chatflow.register_tributary" class="md-nav__link">
-    <span class="md-ellipsis">
-      register_tributary()
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chatflow.executors" class="md-nav__link">
-    <span class="md-ellipsis">
-      executors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#chatflow.executors.getters" class="md-nav__link">
-    <span class="md-ellipsis">
-      getters
-    </span>
-  </a>
   
 </li>
       
@@ -897,13 +1054,13 @@
                   
 
 
-  <h1>API Reference</h1>
+  <h1>Runtime</h1>
 
 <div class="doc doc-object doc-module">
 
 
 
-<a id="chatflow"></a>
+<a id="chatflow.runtime"></a>
   <div class="doc doc-contents first">
 
   
@@ -922,228 +1079,7 @@
 
 
 
-<h2 id="chatflow.Interpreter" class="doc doc-heading">
-          <code>Interpreter</code>
-
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>A class that represents an interpreter for executing ChatFlow scripts.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>code_path</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The path to the ChatFlow script file. Defaults to None.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>code</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The ChatFlow script code. Defaults to None.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Attributes:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>script</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The ChatFlow script code.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>parser</code></td>
-          <td>
-                <code><span title="lark.Lark">Lark</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The Lark parser for parsing the ChatFlow script.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>tree</code></td>
-          <td>
-                <code><span title="lark.Tree">Tree</span></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The parsed syntax tree of the ChatFlow script.</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Methods:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-          <tr>
-            <td><code>__repr__</code></td>
-            <td>
-              <div class="doc-md-description">
-                <p>Returns a pretty-printed representation of the parsed syntax tree.</p>
-              </div>
-            </td>
-          </tr>
-    </tbody>
-  </table>
-
-            <details class="quote">
-              <summary>Source code in <code>chatflow\interpreter.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span>
-<span class="normal">146</span>
-<span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
-<span class="normal">159</span>
-<span class="normal">160</span>
-<span class="normal">161</span>
-<span class="normal">162</span>
-<span class="normal">163</span>
-<span class="normal">164</span>
-<span class="normal">165</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Interpreter</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A class that represents an interpreter for executing ChatFlow scripts.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        code_path (str, optional): The path to the ChatFlow script file. Defaults to None.</span>
-<span class="sd">        code (str, optional): The ChatFlow script code. Defaults to None.</span>
-
-<span class="sd">    Attributes:</span>
-<span class="sd">        script (str): The ChatFlow script code.</span>
-<span class="sd">        parser (lark.Lark): The Lark parser for parsing the ChatFlow script.</span>
-<span class="sd">        tree (lark.Tree): The parsed syntax tree of the ChatFlow script.</span>
-
-<span class="sd">    Methods:</span>
-<span class="sd">        __repr__(str): Returns a pretty-printed representation of the parsed syntax tree.</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span>
-            <span class="n">code_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="p">):</span>
-        <span class="k">if</span> <span class="n">code_path</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">code_path</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">script</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="k">elif</span> <span class="n">code</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">script</span> <span class="o">=</span> <span class="n">code</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">Lark</span><span class="p">(</span><span class="n">grammar</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s2">&quot;chatflow&quot;</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="s2">&quot;lalr&quot;</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">script</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">pretty</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-            </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-
-<h2 id="chatflow.Runtime" class="doc doc-heading">
+<h2 id="chatflow.runtime.Runtime" class="doc doc-heading">
           <code>Runtime</code>
 
 
@@ -1153,67 +1089,7 @@
   <div class="doc doc-contents ">
 
   
-      <p>Runtime for ChatFlow</p>
-<p>The Runtime class is responsible for executing the ChatFlow program. It manages the flow of execution,
-handles statements and blocks, and maintains the symbol table and context stack.</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>interpreter</code></td>
-          <td>
-                <code><a class="autorefs autorefs-internal" title="chatflow.interpreter.Interpreter" href="#chatflow.Interpreter">Interpreter</a></code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The interpreter object.</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-        <tr>
-          <td><code>speak_function</code></td>
-          <td>
-                <code>callable</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The function used for speaking. Defaults to print.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-        <tr>
-          <td><code>listen_function</code></td>
-          <td>
-                <code>callable</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The function used for listening. Defaults to read_input_with_timeout.</p>
-            </div>
-          </td>
-          <td>
-                <code>None</code>
-          </td>
-        </tr>
-    </tbody>
-  </table>
+      <p>The Runtime class represents the execution environment for the ChatFlow program.</p>
 
 
 
@@ -1234,7 +1110,40 @@ handles statements and blocks, and maintains the symbol table and context stack.
           </td>
           <td>
             <div class="doc-md-description">
-              <p>The tree representing the ChatFlow program.</p>
+              <p>The abstract syntax tree of the ChatFlow program.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>flow_dict</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A dictionary mapping flow names to their corresponding blocks.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>exit</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A flag indicating whether the chat flow should exit.</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>contextStack</code></td>
+          <td>
+                <code>list</code>
+          </td>
+          <td>
+            <div class="doc-md-description">
+              <p>A stack of context objects representing the execution context.</p>
             </div>
           </td>
         </tr>
@@ -1260,39 +1169,6 @@ handles statements and blocks, and maintains the symbol table and context stack.
             </div>
           </td>
         </tr>
-        <tr>
-          <td><code>flow_dict</code></td>
-          <td>
-                <code>dict</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A dictionary mapping flow names to their corresponding blocks.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>exit</code></td>
-          <td>
-                <code>bool</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A boolean value indicating whether the program should exit.</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td><code>contextStack</code></td>
-          <td>
-                <code>list</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>A list of Context objects representing the context stack.</p>
-            </div>
-          </td>
-        </tr>
     </tbody>
   </table>
 
@@ -1308,10 +1184,10 @@ handles statements and blocks, and maintains the symbol table and context stack.
     </thead>
     <tbody>
           <tr>
-            <td><code>init__</code></td>
+            <td><code>__init__</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Initialize the Runtime object.</p>
+                <p>Initializes the Runtime object.</p>
               </div>
             </td>
           </tr>
@@ -1319,7 +1195,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>register_flow</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Register the flows defined in the ChatFlow program.</p>
+                <p>Registers the flows defined in the ChatFlow program.</p>
               </div>
             </td>
           </tr>
@@ -1327,7 +1203,23 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>run</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Run the ChatFlow program starting from the 'origin' flow.</p>
+                <p>Runs the chat flow.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code>arun</code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runs the chat flow asynchronously.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code>arun_flow</code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runs a specific flow in the ChatFlow program asynchronously.</p>
               </div>
             </td>
           </tr>
@@ -1335,7 +1227,15 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>run_flow</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Run a specific flow in the ChatFlow program.</p>
+                <p>Runs a specific flow in the ChatFlow program.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code>arun_block</code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runs a block of statements in the ChatFlow program asynchronously.</p>
               </div>
             </td>
           </tr>
@@ -1343,7 +1243,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>run_block</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Run a block of statements in the ChatFlow program.</p>
+                <p>Runs a block of statements in the ChatFlow program.</p>
               </div>
             </td>
           </tr>
@@ -1351,7 +1251,23 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>run_statement</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Run a single statement in the ChatFlow program.</p>
+                <p>Runs a single statement in the ChatFlow program.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code>arun_statement</code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runs a single statement in the ChatFlow program asynchronously.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code>arun_if</code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runs an if statement in the ChatFlow program asynchronously.</p>
               </div>
             </td>
           </tr>
@@ -1359,7 +1275,15 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>run_if</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Run an if statement in the ChatFlow program.</p>
+                <p>Runs an if statement in the ChatFlow program.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code>arun_else</code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runs an else statement in the ChatFlow program asynchronously.</p>
               </div>
             </td>
           </tr>
@@ -1367,7 +1291,15 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>run_else</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Run an else statement in the ChatFlow program.</p>
+                <p>Runs an else statement in the ChatFlow program.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code>arun_engage</code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runs an engage statement in the ChatFlow program asynchronously.</p>
               </div>
             </td>
           </tr>
@@ -1375,7 +1307,15 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>run_engage</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Run an engage statement in the ChatFlow program.</p>
+                <p>Runs an engage statement in the ChatFlow program.</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><code>arun_while</code></td>
+            <td>
+              <div class="doc-md-description">
+                <p>Runs a while statement in the ChatFlow program asynchronously.</p>
               </div>
             </td>
           </tr>
@@ -1383,7 +1323,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <td><code>run_while</code></td>
             <td>
               <div class="doc-md-description">
-                <p>Run a while statement in the ChatFlow program.</p>
+                <p>Runs a while statement in the ChatFlow program.</p>
               </div>
             </td>
           </tr>
@@ -1711,41 +1651,52 @@ handles statements and blocks, and maintains the symbol table and context stack.
 <span class="normal">322</span>
 <span class="normal">323</span>
 <span class="normal">324</span>
-<span class="normal">325</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Runtime</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Runtime for ChatFlow</span>
-
-<span class="sd">    The Runtime class is responsible for executing the ChatFlow program. It manages the flow of execution,</span>
-<span class="sd">    handles statements and blocks, and maintains the symbol table and context stack.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        interpreter (Interpreter): The interpreter object.</span>
-<span class="sd">        speak_function (callable, optional): The function used for speaking. Defaults to print.</span>
-<span class="sd">        listen_function (callable, optional): The function used for listening. Defaults to read_input_with_timeout.</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Runtime</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The Runtime class represents the execution environment for the ChatFlow program.</span>
 
 <span class="sd">    Attributes:</span>
-<span class="sd">        tree (lark.Tree): The tree representing the ChatFlow program.</span>
+<span class="sd">        tree (lark.Tree): The abstract syntax tree of the ChatFlow program.</span>
+<span class="sd">        flow_dict (dict): A dictionary mapping flow names to their corresponding blocks.</span>
+<span class="sd">        exit (bool): A flag indicating whether the chat flow should exit.</span>
+<span class="sd">        contextStack (list): A stack of context objects representing the execution context.</span>
 <span class="sd">        speak_function (callable): The function used for speaking.</span>
 <span class="sd">        listen_function (callable): The function used for listening.</span>
-<span class="sd">        flow_dict (dict): A dictionary mapping flow names to their corresponding blocks.</span>
-<span class="sd">        exit (bool): A boolean value indicating whether the program should exit.</span>
-<span class="sd">        contextStack (list): A list of Context objects representing the context stack.</span>
 
 <span class="sd">    Methods:</span>
-<span class="sd">        init__: Initialize the Runtime object.</span>
-<span class="sd">        register_flow: Register the flows defined in the ChatFlow program.</span>
-<span class="sd">        run: Run the ChatFlow program starting from the &#39;origin&#39; flow.</span>
-<span class="sd">        run_flow: Run a specific flow in the ChatFlow program.</span>
-<span class="sd">        run_block: Run a block of statements in the ChatFlow program.</span>
-<span class="sd">        run_statement: Run a single statement in the ChatFlow program.</span>
-<span class="sd">        run_if: Run an if statement in the ChatFlow program.</span>
-<span class="sd">        run_else: Run an else statement in the ChatFlow program.</span>
-<span class="sd">        run_engage: Run an engage statement in the ChatFlow program.</span>
-<span class="sd">        run_while: Run a while statement in the ChatFlow program.</span>
-
+<span class="sd">        __init__(self, interpreter, speak_function=None, listen_function=None): Initializes the Runtime object.</span>
+<span class="sd">        register_flow(self): Registers the flows defined in the ChatFlow program.</span>
+<span class="sd">        run(self): Runs the chat flow.</span>
+<span class="sd">        arun(self): Runs the chat flow asynchronously.</span>
+<span class="sd">        arun_flow(self, flow_name, parameter=None): Runs a specific flow in the ChatFlow program asynchronously.</span>
+<span class="sd">        run_flow(self, flow_name, parameter=None): Runs a specific flow in the ChatFlow program.</span>
+<span class="sd">        arun_block(self, block, context): Runs a block of statements in the ChatFlow program asynchronously.</span>
+<span class="sd">        run_block(self, block, context): Runs a block of statements in the ChatFlow program.</span>
+<span class="sd">        run_statement(self, statement, context): Runs a single statement in the ChatFlow program.</span>
+<span class="sd">        arun_statement(self, statement, context): Runs a single statement in the ChatFlow program asynchronously.</span>
+<span class="sd">        arun_if(self, statement, context): Runs an if statement in the ChatFlow program asynchronously.</span>
+<span class="sd">        run_if(self, statement, context): Runs an if statement in the ChatFlow program.</span>
+<span class="sd">        arun_else(self, statement, context): Runs an else statement in the ChatFlow program asynchronously.</span>
+<span class="sd">        run_else(self, statement, context): Runs an else statement in the ChatFlow program.</span>
+<span class="sd">        arun_engage(self, statement, context): Runs an engage statement in the ChatFlow program asynchronously.</span>
+<span class="sd">        run_engage(self, statement, context): Runs an engage statement in the ChatFlow program.</span>
+<span class="sd">        arun_while(self, statement, context): Runs a while statement in the ChatFlow program asynchronously.</span>
+<span class="sd">        run_while(self, statement, context): Runs a while statement in the ChatFlow program.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-            <span class="bp">self</span><span class="p">,</span> <span class="n">interpreter</span><span class="p">,</span> <span class="n">speak_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">listen_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">async_flag</span><span class="o">=</span><span class="kc">False</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">interpreter</span><span class="p">,</span> <span class="n">speak_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">listen_function</span><span class="o">=</span><span class="kc">None</span>
     <span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize the Runtime object.</span>
 
@@ -1760,21 +1711,8 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <span class="bp">self</span><span class="o">.</span><span class="n">exit</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">register_flow</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">contextStack</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">async_flag</span> <span class="o">=</span> <span class="n">async_flag</span>
-        <span class="k">if</span> <span class="n">speak_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">async_flag</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="n">aprint</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="nb">print</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="n">speak_function</span>
-        <span class="k">if</span> <span class="n">listen_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">async_flag</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">a_read_input_with_timeout</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">read_input_with_timeout</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">listen_function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="n">speak_function</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">listen_function</span>
 
     <span class="k">def</span> <span class="nf">register_flow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1786,9 +1724,32 @@ handles statements and blocks, and maintains the symbol table and context stack.
             <span class="bp">self</span><span class="o">.</span><span class="n">flow_dict</span><span class="p">[</span><span class="n">flow_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">block</span>
 
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Runs the chat flow.</span>
+
+<span class="sd">        If the speak_function is not provided, it defaults to the print function.</span>
+<span class="sd">        If the listen_function is not provided, it defaults to the read_input_with_timeout function.</span>
+
+<span class="sd">        The chat flow starts from the &quot;origin&quot; flow.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="nb">print</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">read_input_with_timeout</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run_flow</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">arun</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Runs the chatflow asynchronously.</span>
+
+<span class="sd">        This method is responsible for executing the chatflow asynchronously.</span>
+<span class="sd">        It sets the default speak and listen functions if not provided,</span>
+<span class="sd">        and then calls the `arun_flow` method to start the chatflow.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="n">aprint</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">a_read_input_with_timeout</span>
         <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">arun_flow</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">arun_flow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow_name</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1888,7 +1849,6 @@ handles statements and blocks, and maintains the symbol table and context stack.
                 <span class="n">run_fetch</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
             <span class="k">case</span> <span class="s2">&quot;block&quot;</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">run_block</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">arun_statement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -2030,6 +1990,8 @@ handles statements and blocks, and maintains the symbol table and context stack.
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">condition</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">while</span> <span class="n">get_condition</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">:</span>
+                <span class="k">return</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">run_block</span><span class="p">(</span><span class="n">statement</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">context</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
@@ -2052,8 +2014,8 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.__init__" class="doc doc-heading">
-          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">interpreter</span><span class="p">,</span> <span class="n">speak_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">listen_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">async_flag</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<h3 id="chatflow.runtime.Runtime.__init__" class="doc doc-heading">
+          <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">interpreter</span><span class="p">,</span> <span class="n">speak_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">listen_function</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -2078,7 +2040,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>interpreter</code></td>
           <td>
-                <code><a class="autorefs autorefs-internal" title="chatflow.interpreter.Interpreter" href="#chatflow.Interpreter">Interpreter</a></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.interpreter.Interpreter" href="../interpreter/#chatflow.interpreter.Interpreter">Interpreter</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2139,21 +2101,8 @@ handles statements and blocks, and maintains the symbol table and context stack.
 <span class="normal">53</span>
 <span class="normal">54</span>
 <span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span>
-<span class="normal">66</span>
-<span class="normal">67</span>
-<span class="normal">68</span>
-<span class="normal">69</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">interpreter</span><span class="p">,</span> <span class="n">speak_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">listen_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">async_flag</span><span class="o">=</span><span class="kc">False</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">interpreter</span><span class="p">,</span> <span class="n">speak_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">listen_function</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialize the Runtime object.</span>
 
@@ -2168,21 +2117,8 @@ handles statements and blocks, and maintains the symbol table and context stack.
     <span class="bp">self</span><span class="o">.</span><span class="n">exit</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">register_flow</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">contextStack</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">async_flag</span> <span class="o">=</span> <span class="n">async_flag</span>
-    <span class="k">if</span> <span class="n">speak_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">async_flag</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="n">aprint</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="nb">print</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="n">speak_function</span>
-    <span class="k">if</span> <span class="n">listen_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">async_flag</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">a_read_input_with_timeout</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">read_input_with_timeout</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">listen_function</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="n">speak_function</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">listen_function</span>
 </code></pre></div></td></tr></table></div>
           </details>
   </div>
@@ -2195,7 +2131,63 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.arun_block" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.arun" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">arun</span><span class="p">()</span></code>
+  
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-async"><code>async</code></small>
+  </span>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Runs the chatflow asynchronously.</p>
+<p>This method is responsible for executing the chatflow asynchronously.
+It sets the default speak and listen functions if not provided,
+and then calls the <code>arun_flow</code> method to start the chatflow.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>chatflow\runtime.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Runs the chatflow asynchronously.</span>
+
+<span class="sd">    This method is responsible for executing the chatflow asynchronously.</span>
+<span class="sd">    It sets the default speak and listen functions if not provided,</span>
+<span class="sd">    and then calls the `arun_flow` method to start the chatflow.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="n">aprint</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">a_read_input_with_timeout</span>
+    <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">arun_flow</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="chatflow.runtime.Runtime.arun_block" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">arun_block</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -2239,7 +2231,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2255,19 +2247,19 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">118</span>
-<span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">128</span>
 <span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run a block of statements in the ChatFlow program.</span>
 
@@ -2292,7 +2284,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.arun_else" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.arun_else" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">arun_else</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -2336,7 +2328,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2352,20 +2344,20 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">251</span>
-<span class="normal">252</span>
-<span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">260</span>
 <span class="normal">261</span>
 <span class="normal">262</span>
 <span class="normal">263</span>
-<span class="normal">264</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_else</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_else</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run an else statement in the ChatFlow program.</span>
 
@@ -2391,7 +2383,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.arun_engage" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.arun_engage" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">arun_engage</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -2435,7 +2427,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2451,16 +2443,16 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">281</span>
-<span class="normal">282</span>
-<span class="normal">283</span>
-<span class="normal">284</span>
-<span class="normal">285</span>
-<span class="normal">286</span>
-<span class="normal">287</span>
-<span class="normal">288</span>
-<span class="normal">289</span>
-<span class="normal">290</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_engage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_engage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run an engage statement in the ChatFlow program.</span>
 
@@ -2482,7 +2474,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.arun_flow" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.arun_flow" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">arun_flow</span><span class="p">(</span><span class="n">flow_name</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -2542,21 +2534,21 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 96</span>
 <span class="normal"> 97</span>
 <span class="normal"> 98</span>
 <span class="normal"> 99</span>
-<span class="normal">100</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_flow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow_name</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_flow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow_name</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run a specific flow in the ChatFlow program.</span>
 
@@ -2583,7 +2575,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.arun_if" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.arun_if" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">arun_if</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -2627,7 +2619,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2643,21 +2635,21 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span>
-<span class="normal">222</span>
-<span class="normal">223</span>
-<span class="normal">224</span>
-<span class="normal">225</span>
-<span class="normal">226</span>
-<span class="normal">227</span>
-<span class="normal">228</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">228</span>
 <span class="normal">229</span>
 <span class="normal">230</span>
 <span class="normal">231</span>
 <span class="normal">232</span>
-<span class="normal">233</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_if</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_if</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run an if statement in the ChatFlow program.</span>
 
@@ -2684,7 +2676,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.arun_statement" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.arun_statement" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">arun_statement</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -2728,7 +2720,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2744,16 +2736,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">185</span>
-<span class="normal">186</span>
-<span class="normal">187</span>
-<span class="normal">188</span>
-<span class="normal">189</span>
-<span class="normal">190</span>
-<span class="normal">191</span>
-<span class="normal">192</span>
-<span class="normal">193</span>
-<span class="normal">194</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">194</span>
 <span class="normal">195</span>
 <span class="normal">196</span>
 <span class="normal">197</span>
@@ -2776,7 +2759,16 @@ handles statements and blocks, and maintains the symbol table and context stack.
 <span class="normal">214</span>
 <span class="normal">215</span>
 <span class="normal">216</span>
-<span class="normal">217</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_statement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_statement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run a single statement in the ChatFlow program.</span>
 
@@ -2821,7 +2813,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.arun_while" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.arun_while" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">arun_while</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
   
   <span class="doc doc-labels">
@@ -2865,7 +2857,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -2881,17 +2873,17 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">303</span>
-<span class="normal">304</span>
-<span class="normal">305</span>
-<span class="normal">306</span>
-<span class="normal">307</span>
-<span class="normal">308</span>
-<span class="normal">309</span>
-<span class="normal">310</span>
-<span class="normal">311</span>
-<span class="normal">312</span>
-<span class="normal">313</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">arun_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run a while statement in the ChatFlow program.</span>
 
@@ -2914,7 +2906,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.register_flow" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.register_flow" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">register_flow</span><span class="p">()</span></code>
 
 </h3>
@@ -2926,14 +2918,14 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">71</span>
-<span class="normal">72</span>
-<span class="normal">73</span>
-<span class="normal">74</span>
-<span class="normal">75</span>
-<span class="normal">76</span>
-<span class="normal">77</span>
-<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">register_flow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">register_flow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Register the flows defined in the ChatFlow program.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -2953,7 +2945,61 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.run_block" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.run" class="doc doc-heading">
+          <code class="highlight language-python"><span class="n">run</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Runs the chat flow.</p>
+<p>If the speak_function is not provided, it defaults to the print function.
+If the listen_function is not provided, it defaults to the read_input_with_timeout function.</p>
+<p>The chat flow starts from the "origin" flow.</p>
+
+          <details class="quote">
+            <summary>Source code in <code>chatflow\runtime.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Runs the chat flow.</span>
+
+<span class="sd">    If the speak_function is not provided, it defaults to the print function.</span>
+<span class="sd">    If the listen_function is not provided, it defaults to the read_input_with_timeout function.</span>
+
+<span class="sd">    The chat flow starts from the &quot;origin&quot; flow.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speak_function</span> <span class="o">=</span> <span class="nb">print</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">listen_function</span> <span class="o">=</span> <span class="n">read_input_with_timeout</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">run_flow</span><span class="p">(</span><span class="s2">&quot;origin&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+          </details>
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="chatflow.runtime.Runtime.run_block" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">run_block</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
 
 </h3>
@@ -2993,7 +3039,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3009,21 +3055,21 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">142</span>
 <span class="normal">143</span>
 <span class="normal">144</span>
 <span class="normal">145</span>
-<span class="normal">146</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run a block of statements in the ChatFlow program.</span>
 
@@ -3050,7 +3096,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.run_else" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.run_else" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">run_else</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
 
 </h3>
@@ -3090,7 +3136,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3106,20 +3152,20 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">266</span>
-<span class="normal">267</span>
-<span class="normal">268</span>
-<span class="normal">269</span>
-<span class="normal">270</span>
-<span class="normal">271</span>
-<span class="normal">272</span>
-<span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">275</span>
 <span class="normal">276</span>
 <span class="normal">277</span>
 <span class="normal">278</span>
-<span class="normal">279</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_else</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_else</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run an else statement in the ChatFlow program.</span>
 
@@ -3145,7 +3191,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.run_engage" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.run_engage" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">run_engage</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
 
 </h3>
@@ -3185,7 +3231,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3201,16 +3247,16 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">292</span>
-<span class="normal">293</span>
-<span class="normal">294</span>
-<span class="normal">295</span>
-<span class="normal">296</span>
-<span class="normal">297</span>
-<span class="normal">298</span>
-<span class="normal">299</span>
-<span class="normal">300</span>
-<span class="normal">301</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_engage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_engage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run an engage statement in the ChatFlow program.</span>
 
@@ -3232,7 +3278,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.run_flow" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.run_flow" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">run_flow</span><span class="p">(</span><span class="n">flow_name</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
@@ -3288,21 +3334,21 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">112</span>
 <span class="normal">113</span>
 <span class="normal">114</span>
 <span class="normal">115</span>
-<span class="normal">116</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_flow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow_name</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_flow</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">flow_name</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run a specific flow in the ChatFlow program.</span>
 
@@ -3329,7 +3375,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.run_if" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.run_if" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">run_if</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
 
 </h3>
@@ -3369,7 +3415,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3385,21 +3431,21 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">235</span>
-<span class="normal">236</span>
-<span class="normal">237</span>
-<span class="normal">238</span>
-<span class="normal">239</span>
-<span class="normal">240</span>
-<span class="normal">241</span>
-<span class="normal">242</span>
-<span class="normal">243</span>
-<span class="normal">244</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">244</span>
 <span class="normal">245</span>
 <span class="normal">246</span>
 <span class="normal">247</span>
 <span class="normal">248</span>
-<span class="normal">249</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_if</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_if</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run an if statement in the ChatFlow program.</span>
 
@@ -3426,7 +3472,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.run_statement" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.run_statement" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">run_statement</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
 
 </h3>
@@ -3466,7 +3512,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3482,17 +3528,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span>
-<span class="normal">157</span>
-<span class="normal">158</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">158</span>
 <span class="normal">159</span>
 <span class="normal">160</span>
 <span class="normal">161</span>
@@ -3516,7 +3552,17 @@ handles statements and blocks, and maintains the symbol table and context stack.
 <span class="normal">179</span>
 <span class="normal">180</span>
 <span class="normal">181</span>
-<span class="normal">182</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_statement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_statement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run a single statement in the ChatFlow program.</span>
 
@@ -3563,7 +3609,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
 
 
-<h3 id="chatflow.Runtime.run_while" class="doc doc-heading">
+<h3 id="chatflow.runtime.Runtime.run_while" class="doc doc-heading">
           <code class="highlight language-python"><span class="n">run_while</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
 
 </h3>
@@ -3603,7 +3649,7 @@ handles statements and blocks, and maintains the symbol table and context stack.
         <tr>
           <td><code>context</code></td>
           <td>
-                <code><span title="chatflow.context.Context">Context</span></code>
+                <code><a class="autorefs autorefs-internal" title="chatflow.context.Context" href="../context/#chatflow.context.Context">Context</a></code>
           </td>
           <td>
             <div class="doc-md-description">
@@ -3619,17 +3665,19 @@ handles statements and blocks, and maintains the symbol table and context stack.
 
           <details class="quote">
             <summary>Source code in <code>chatflow\runtime.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">315</span>
-<span class="normal">316</span>
-<span class="normal">317</span>
-<span class="normal">318</span>
-<span class="normal">319</span>
-<span class="normal">320</span>
-<span class="normal">321</span>
-<span class="normal">322</span>
-<span class="normal">323</span>
-<span class="normal">324</span>
-<span class="normal">325</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">run_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">statement</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Run a while statement in the ChatFlow program.</span>
 
@@ -3639,6 +3687,8 @@ handles statements and blocks, and maintains the symbol table and context stack.
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">condition</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">while</span> <span class="n">get_condition</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exit</span><span class="p">:</span>
+            <span class="k">return</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run_block</span><span class="p">(</span><span class="n">statement</span><span class="o">.</span><span class="n">children</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">context</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
           </details>
@@ -3653,169 +3703,6 @@ handles statements and blocks, and maintains the symbol table and context stack.
   </div>
 
 </div>
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-
-<h2 id="chatflow.register_tributary" class="doc doc-heading">
-          <code class="highlight language-python"><span class="n">register_tributary</span><span class="p">(</span><span class="n">tributary_name</span><span class="p">)</span></code>
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Register a tributary function to be used in ChatFlow</p>
-
-
-
-  <p><strong>Parameters:</strong></p>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Default</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><code>tributary_name</code></td>
-          <td>
-                <code>str</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The name of the tributary to be registered</p>
-            </div>
-          </td>
-          <td>
-              <em>required</em>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-
-
-  <p><strong>Returns:</strong></p>
-  <table>
-    <thead>
-      <tr>
-<th>Name</th>        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-<td><code>function</code></td>          <td>
-                <code>callable</code>
-          </td>
-          <td>
-            <div class="doc-md-description">
-              <p>The decorated function</p>
-            </div>
-          </td>
-        </tr>
-    </tbody>
-  </table>
-
-          <details class="quote">
-            <summary>Source code in <code>chatflow\tributary.py</code></summary>
-            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">register_tributary</span><span class="p">(</span><span class="n">tributary_name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Register a tributary function to be used in ChatFlow</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        tributary_name (str): The name of the tributary to be registered</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        function(callable): The decorated function</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-        <span class="n">tributary_dict</span><span class="p">[</span><span class="n">tributary_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>
-        <span class="k">return</span> <span class="n">func</span>
-
-    <span class="k">return</span> <span class="n">decorator</span>
-</code></pre></div></td></tr></table></div>
-          </details>
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-module">
-
-
-
-<a id="chatflow.executors"></a>
-  <div class="doc doc-contents first">
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-module">
-
-
-
-<a id="chatflow.executors.getters"></a>
-  <div class="doc doc-contents first">
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
 
 
 

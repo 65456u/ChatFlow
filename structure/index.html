@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../tutorials/">
+        <link rel="prev" href="../grammar/">
       
       
         <link rel="next" href="../lexical/">
@@ -289,6 +289,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../grammar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grammar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -459,15 +480,185 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/" class="md-nav__link">
+      <a href="../async/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    Async Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     API Reference
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interpreter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interpreter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Context
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Executors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -570,12 +761,12 @@
 
 
 <h1 id="structure-of-chatflow-program">Structure of ChatFlow Program</h1>
-<p>The structure of a ChatFlow program is based on three key concepts: flow, block,statement, and tributary.</p>
+<p>The structure of a ChatFlow program is based on three key concepts: flow, block, statement, and tributary.</p>
 <h2 id="flow">Flow</h2>
 <p>A flow in ChatFlow represents a sequence of steps or actions that define the conversational logic. It defines the structure and flow of the conversation between the user and the ChatFlow program. A flow is defined using the keyword "flow" followed by a flow name and enclosed within curly braces.</p>
 <p>The BNF (Backus-Naur Form) representation of a flow in ChatFlow is as follows:</p>
-<pre><code>flow             ::= &quot;flow&quot; flow_name &quot;{&quot; block &quot;}&quot;
-flow_name        ::= identifier
+<pre><code>&lt;flow&gt; ::= &quot;flow&quot; &lt;flow_name&gt; &quot;{&quot; &lt;block&gt; &quot;}&quot;
+&lt;flow_name&gt; ::= &lt;identifier&gt;
 </code></pre>
 <p>In this syntax, the "flow_name" is a user-defined identifier that uniquely identifies the flow within the program. It should be chosen to reflect the purpose or content of the flow. The "block" represents a collection of statements that define the actions and interactions within the flow. These statements can include if statements, speak statements, engage statements, handover statements, and more.</p>
 <p>To transition from one flow to another, you can use the engage statement. The engage statement allows you to initiate another flow within the current flow, enabling you to create complex conversation flows and modularize your ChatFlow program. </p>
@@ -586,7 +777,7 @@ flow_name        ::= identifier
 <h2 id="block">Block</h2>
 <p>A block in ChatFlow is a series of statements grouped together within a flow. It represents a section of code that is executed sequentially. A block is enclosed within curly braces and can contain multiple statements.</p>
 <p>The definition of a block in ChatFlow can be represented as:</p>
-<pre><code>block            ::= statement*
+<pre><code>&lt;flow&gt; ::= &quot;flow&quot; &lt;flow_name&gt; &quot;{&quot; &lt;block&gt; &quot;}&quot;
 </code></pre>
 <p>In this representation, "statement*" denotes zero or more statements within the block. Each statement represents a specific action or instruction within the flow.</p>
 <p>When you create a block, any variables declared within that block are only accessible within that block's scope. They are not visible outside of the block or in other blocks within the flow.</p>
@@ -614,16 +805,17 @@ flow_name        ::= identifier
 <h2 id="statement">Statement</h2>
 <p>A statement in ChatFlow is a basic unit of code that represents an action or instruction within a flow. It performs a specific task or interaction with the user. ChatFlow supports various types of statements, including conditionals, speaking to the user, engaging with other flows, listening for user input, assigning values to variables, looping constructs, and more.</p>
 <p>The BNF representation of a statement in ChatFlow can be defined as:</p>
-<pre><code>statement        ::= if_statement
-                   | speak_statement
-                   | engage_statement
-                   | handover_statement
-                   | end_statement
-                   | listen_statement
-                   | assign_statement
-                   | while_statement
-                   | store_statement
-                   | &quot;{&quot; block &quot;}&quot;
+<pre><code>&lt;statement&gt; ::= &lt;if_statement&gt;
+              | &lt;speak_statement&gt;  
+              | &lt;engage_statement&gt;
+              | &lt;handover_statement&gt;
+              | &lt;end_statement&gt;
+              | &lt;listen_statement&gt;
+              | &lt;assign_statement&gt;
+              | &lt;while_statement&gt;  
+              | &lt;store_statement&gt;
+              | &lt;fetch_statement&gt;
+              | &quot;{&quot; &lt;block&gt; &quot;}&quot;
 </code></pre>
 <p>Each statement type has its own syntax and purpose within the ChatFlow program.</p>
 <p>For more detailed information on statements, please refer to <a href="../statement/">statement</a>.</p>

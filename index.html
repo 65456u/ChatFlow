@@ -369,6 +369,27 @@
   
   
     <li class="md-nav__item">
+      <a href="grammar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grammar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="structure/" class="md-nav__link">
         
   
@@ -460,15 +481,185 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/" class="md-nav__link">
+      <a href="async/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    Async Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     API Reference
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interpreter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interpreter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Context
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="executors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Executors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -581,33 +772,34 @@
 
 <h2 id="introduction">Introduction</h2>
 <p>ChatFlow is a domain-specific language designed specifically for authoring conversational dialog flows, such as for chatbots and voice assistants. </p>
-<p>It utilizes an easy to read declarative format to define different conversation flows, the actions within them, and how they connect together. This makes it intuitive for developers to visualize and manage complex dialog logic.</p>
-<p>Under the hood, ChatFlow scripts are compiled into an intermediate tree representation. The included runtime engine can then interpret and execute the conversation flows based on user inputs.</p>
+<p>It provides an easy to read and write syntax that models natural conversations, with abstractions for common constructs needed for conversational interfaces. ChatFlow makes it simpler for non-programmers to define complex conversational experiences.</p>
+<p>The language can integrate tightly with Python enabling advanced functionality when required through custom code. ChatFlow aims to balance simplicity with versatility. </p>
 <h2 id="key-features">Key Features</h2>
 <ul>
 <li>
-<p><strong>Readability</strong>: ChatFlow features a highly readable grammar that enables both developers and non-technical people to understand conversation logic. It uses English-like syntax following natural language constructs, which reduces the learning curve.</p>
+<p><strong>Readability</strong>: ChatFlow syntax reads like natural language to enable non-programmers to understand and author dialog flows.</p>
 </li>
 <li>
-<p><strong>Integration</strong>: ChatFlow provides rich integration capabilities with external systems via Python. It allows data processing in real-time during the conversation. Users can define custom execution flows named "tributaries", which enable integration with anything in Python including databases, APIs and more.</p>
+<p><strong>Easy to use</strong>: The specialized DSL provides high-level abstractions tailored for conversations like dialog flows, conditional logic, variables, etc. making chatbot development intuitive.</p>
 </li>
 <li>
-<p><strong>Interpreted</strong>: ChatFlow scripts compile into an intermediate tree format, which enables analysis, optimization and detailed debug information.</p>
+<p><strong>Integration</strong>: ChatFlow provides rich integration capabilities with external systems via Python. It allows data processing in real-time during the conversation. Users can define custom execution flows named "tributary", which enable integration with anything in Python including databases, APIs and more.</p>
 </li>
 <li>
-<p><strong>Extensibility</strong>: ChatFlow provides extension points to customize execution by defining tributaries.</p>
+<p><strong>Integration with python's async functionality</strong>: ChatFlow enables asynchronous, non-blocking execution of dialogs via Python's async/await model. This allows I/O operations like API calls to run in parallel without blocking during a conversation.  </p>
 </li>
 <li>
-<p><strong>Information Flow</strong>: ChatFlow follows one-way flow of information between flows, where data can only be passed from caller flows to callee flows. This improves modularity and hides complexity.</p>
+<p><strong>Interpreted</strong>: ChatFlow scripts are interpreted at runtime, enabling rapid prototyping. The interpreter provides early detection of errors in conversational logic during testing without needing compilation.</p>
+</li>
+<li>
+<p><strong>Extensible</strong>: Users can extend ChatFlow functionality by calling out to Python code within dialog scripts. This allows adding advanced or custom processing logic when needed.</p>
 </li>
 </ul>
 <h2 id="learning-chatflow">Learning ChatFlow</h2>
 <ol>
 <li><a href="tutorials/">Quick Start</a></li>
 <li><a href="tutorials/">Tutorial</a></li>
-<li><a href="grammar.md">Grammar</a></li>
-<li><a href="concepts.md">Concepts</a></li>
-<li><a href="advanced.md">Advanced</a></li>
+<li><a href="grammar/">Grammar</a></li>
 </ol>
 <h2 id="acknowledgements">Acknowledgements</h2>
 <p>ChatFlow owes much gratitude to the open source projects that helped make it possible.</p>

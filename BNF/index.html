@@ -12,7 +12,7 @@
         <link rel="prev" href="../statement/">
       
       
-        <link rel="next" href="../reference/">
+        <link rel="next" href="../async/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -292,6 +292,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../grammar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grammar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../structure/" class="md-nav__link">
         
   
@@ -393,15 +414,185 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/" class="md-nav__link">
+      <a href="../async/" class="md-nav__link">
         
+  
+  <span class="md-ellipsis">
+    Async Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     API Reference
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    References
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interpreter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interpreter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runtime/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Runtime
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Context
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../executors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Executors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../utils/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Utils
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -461,123 +652,120 @@
 
 <h1 id="bnf-definition-of-chatflow">BNF Definition of ChatFlow</h1>
 <p>Following is the BNF definition of ChatFlow:</p>
-<pre><code>chatflow         : flow+
+<pre><code>&lt;chatflow&gt; ::= &lt;flow&gt;+
 
-flow             : &quot;flow&quot; flow_name &quot;{&quot; block &quot;}&quot;
+&lt;flow&gt; ::= &quot;flow&quot; &lt;flow_name&gt; &quot;{&quot; &lt;block&gt; &quot;}&quot;
 
-block            : statement*
+&lt;block&gt; ::= &lt;statement&gt;*
 
-statement        : if_statement
-                 | speak_statement
-                 | engage_statement
-                 | handover_statement
-                 | end_statement
-                 | listen_statement
-                 | assign_statement
-                 | while_statement
-                 | store_statement
-                 | fetch_statement
-                 | &quot;{&quot; block &quot;}&quot;
+&lt;statement&gt; ::= &lt;if_statement&gt;
+              | &lt;speak_statement&gt;  
+              | &lt;engage_statement&gt;
+              | &lt;handover_statement&gt;
+              | &lt;end_statement&gt;
+              | &lt;listen_statement&gt;
+              | &lt;assign_statement&gt;
+              | &lt;while_statement&gt;  
+              | &lt;store_statement&gt;
+              | &lt;fetch_statement&gt;
+              | &quot;{&quot; &lt;block&gt; &quot;}&quot;
 
-store_statement  : &quot;store&quot; value
+&lt;store_statement&gt; ::= &quot;store&quot; &lt;value&gt;
 
-fetch_statement  : &quot;fetch&quot; variable
+&lt;fetch_statement&gt; ::= &quot;fetch&quot; &lt;variable&gt;
 
-if_statement     : &quot;if&quot; condition &quot;{&quot; block &quot;}&quot; else_statement?
+&lt;if_statement&gt; ::= &quot;if&quot; &lt;condition&gt; &quot;{&quot; &lt;block&gt; &quot;}&quot; &lt;else_statement&gt;?
 
-else_statement   : &quot;else&quot; &quot;{&quot; block &quot;}&quot;
-                 | &quot;else&quot; if_statement
+&lt;else_statement&gt; ::= &quot;else&quot; &quot;{&quot; &lt;block&gt; &quot;}&quot;
+                  | &quot;else&quot; &lt;if_statement&gt;
 
-while_statement  : &quot;while&quot; condition &quot;{&quot; block &quot;}&quot;
+&lt;while_statement&gt; ::= &quot;while&quot; &lt;condition&gt; &quot;{&quot; &lt;block&gt; &quot;}&quot;
 
-speak_statement  : &quot;speak&quot; str_expression
+&lt;speak_statement&gt; ::= &quot;speak&quot; &lt;str_expression&gt;  
 
-str_expression   : value ( &quot;+&quot; value )*
+&lt;str_expression&gt; ::= &lt;value&gt; (&quot;+&quot; &lt;value&gt;)*
 
-engage_statement : &quot;engage&quot; flow_name
+&lt;engage_statement&gt; ::= &quot;engage&quot; &lt;flow_name&gt;
 
-handover_statement : &quot;handover&quot; tributary_name
+&lt;handover_statement&gt; ::= &quot;handover&quot; &lt;tributary_name&gt;  
 
-end_statement    : &quot;end&quot;
+&lt;end_statement&gt; ::= &quot;end&quot;
 
-listen_statement : &quot;listen&quot; &quot;for&quot; variable ( &quot;for&quot; time )?
+&lt;listen_statement&gt; ::= &quot;listen&quot; &quot;for&quot; &lt;variable&gt; (&quot;for&quot; &lt;time&gt;)?
 
-assign_statement : &quot;assign&quot; expression &quot;to&quot; variable
+&lt;assign_statement&gt; ::= &quot;assign&quot; &lt;expression&gt; &quot;to&quot; &lt;variable&gt;
 
-condition        : match_compare
-                 | equal_compare
-                 | larger_compare
-                 | less_compare
-                 | boolean
-                 | timeout
-                 | &quot;not&quot; condition
+&lt;condition&gt; ::= &lt;match_compare&gt; 
+              | &lt;equal_compare&gt;
+              | &lt;larger_compare&gt; 
+              | &lt;less_compare&gt;
+              | &lt;boolean&gt;
+              | &lt;timeout&gt;
+              | &quot;not&quot; &lt;condition&gt;
 
-larger_compare   : expression &quot;larger&quot; &quot;than&quot; expression
+&lt;larger_compare&gt; ::= &lt;expression&gt; &quot;larger&quot; &quot;than&quot; &lt;expression&gt;  
 
-less_compare     : expression &quot;less&quot; &quot;than&quot; expression 
+&lt;less_compare&gt; ::= &lt;expression&gt; &quot;less&quot; &quot;than&quot; &lt;expression&gt;
 
-boolean          : TRUE
-                 | FALSE
+&lt;boolean&gt; ::= TRUE | FALSE
 
-TRUE             : &quot;true&quot;
+TRUE ::= &quot;true&quot;  
 
-FALSE            : &quot;false&quot;
+FALSE ::= &quot;false&quot;
 
-match_compare    : expression &quot;match&quot; value ( &quot;as&quot; variable )?
+&lt;match_compare&gt; ::= &lt;expression&gt; &quot;match&quot; &lt;value&gt; (&quot;as&quot; &lt;variable&gt;)?
 
-equal_compare    : expression &quot;equals&quot; expression
+&lt;equal_compare&gt; ::= &lt;expression&gt; &quot;equals&quot; &lt;expression&gt;
 
-expression       : term ( add_sub_operator term )*
+&lt;expression&gt; ::= &lt;term&gt; (&lt;add_sub_operator&gt; &lt;term&gt;)*
 
-term             : factor ( mul_div_operator factor )*
+&lt;term&gt; ::= &lt;factor&gt; (&lt;mul_div_operator&gt; &lt;factor&gt;)*  
 
-factor           : value
-                 | &quot;(&quot; expression &quot;)&quot;
+&lt;factor&gt; ::= &lt;value&gt;
+           | &quot;(&quot; &lt;expression&gt; &quot;)&quot;
 
-add_sub_operator : PLUS | MINUS
+&lt;add_sub_operator&gt; ::= PLUS | MINUS
 
-mul_div_operator : TIMES | DIVIDE
+&lt;mul_div_operator&gt; ::= TIMES | DIVIDE   
 
-TIMES            : &quot;*&quot;
+TIMES ::= &quot;*&quot;  
 
-DIVIDE           : &quot;/&quot;
+DIVIDE ::= &quot;/&quot;
 
-PLUS             : &quot;+&quot;
+PLUS ::= &quot;+&quot;  
 
-MINUS            : &quot;-&quot;
+MINUS ::= &quot;-&quot;
 
-value            : timeout
-                 | literal
-                 | variable
+&lt;value&gt; ::= &lt;timeout&gt;  
+          | &lt;literal&gt;
+          | &lt;variable&gt;   
 
-variable         : identifier
+&lt;variable&gt; ::= &lt;identifier&gt;  
 
-identifier       : IDENTIFIER_TOKEN
+&lt;identifier&gt; ::= IDENTIFIER
 
-flow_name        : identifier
+&lt;flow_name&gt; ::= &lt;identifier&gt;
 
-tributary_name   : identifier
+&lt;tributary_name&gt; ::= &lt;identifier&gt; 
 
-time             : value time_unit
+&lt;time&gt; ::= &lt;value&gt; &lt;time_unit&gt;  
 
-time_unit        : second | minute | hour
+&lt;time_unit&gt; ::= SECOND | MINUTE | HOUR
 
-second           : &quot;s&quot;
+SECOND ::= &quot;s&quot;  
 
-minute           : &quot;m&quot;
+MINUTE ::= &quot;m&quot;
 
-hour             : &quot;h&quot;
+HOUR ::= &quot;h&quot;
 
-timeout          : &quot;timeout&quot;
+&lt;timeout&gt; ::= &quot;timeout&quot;
 
-comparison_operator : &quot;equals&quot; | &quot;larger&quot; &quot;than&quot; | &quot;less&quot; &quot;than&quot;
+&lt;literal&gt; ::= STRING  
+           | NUMBER
 
-literal          : STRING_LITERAL
-                 | NUMBER_LITERAL
-
-IDENTIFIER_TOKEN : /[a-zA-Z_][a-zA-Z0-9_]*/
-STRING_LITERAL   : /\&quot;(\\.|[^&quot;\n])*\&quot;/
-NUMBER_LITERAL   : SIGNED_NUMBER
+IDENTIFIER ::= letter(letter | digit | &quot;_&quot;)*
+letter ::= &quot;A&quot;..&quot;Z&quot; | &quot;a&quot;..&quot;z&quot;
+digit ::= &quot;0&quot;..&quot;9&quot;  
 </code></pre>
 
 
