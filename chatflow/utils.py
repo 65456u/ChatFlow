@@ -1,3 +1,6 @@
+import asyncio
+import inspect
+
 import aioconsole
 from inputimeout import inputimeout, TimeoutOccurred
 
@@ -54,7 +57,9 @@ async def a_read_input_with_timeout(timeout=None):
     else:
         timeout_task = asyncio.create_task(timeout_checker(timeout))
         input_task = asyncio.create_task(aioconsole.ainput())
-        done, pending = await asyncio.wait({timeout_task, input_task}, return_when=asyncio.FIRST_COMPLETED)
+        done, pending = await asyncio.wait(
+            {timeout_task, input_task}, return_when=asyncio.FIRST_COMPLETED
+        )
 
         if input_task in done:
             message = input_task.result()
@@ -78,7 +83,7 @@ def read_input_with_timeout(timeout=None):
         if timeout is None:
             message = input()
         else:
-            message = inputimeout(prompt='', timeout=timeout)
+            message = inputimeout(prompt="", timeout=timeout)
         return message
     except TimeoutOccurred:
         return None
@@ -112,10 +117,6 @@ async def a_call_function(func, *args, **kwargs):
         result = func(*args, **kwargs)
 
     return result
-
-
-import inspect
-import asyncio
 
 
 def call_function(func, *args, **kwargs):

@@ -3,7 +3,7 @@ Executors for running different types of statements.
 """
 
 from .setters import *
-from .. import get_tributary
+from ..tributary import get_tributary
 from ..utils import a_call_function, call_function
 
 

@@ -6,7 +6,7 @@ from .utils import *
 class Runtime:
     """
     The Runtime class represents the execution environment for the ChatFlow program.
-    
+
     Attributes:
         tree (lark.Tree): The abstract syntax tree of the ChatFlow program.
         flow_dict (dict): A dictionary mapping flow names to their corresponding blocks.
@@ -36,9 +36,7 @@ class Runtime:
         run_while(self, statement, context): Runs a while statement in the ChatFlow program.
     """
 
-    def __init__(
-            self, interpreter, speak_function=None, listen_function=None
-    ):
+    def __init__(self, interpreter, speak_function=None, listen_function=None):
         """Initialize the Runtime object.
 
         Args:

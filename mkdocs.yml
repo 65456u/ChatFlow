@@ -9,7 +9,7 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
-          paths: [ src ]
+          paths: [src]
           options:
             show_submodules: false
 
@@ -17,6 +17,7 @@ nav:
   - ChatFlow: index.md
   - Quick Start: quick-start.md
   - Tutorial: tutorials.md
+  - Examples: examples.md
   - Grammar:
       - Grammar: grammar.md
       - Structure: structure.md
@@ -31,5 +32,6 @@ nav:
       - Context: context.md
       - Executors: executors.md
       - Utils: utils.md
+      - Test: test.md
 
   - License: LICENSE.md

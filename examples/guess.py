@@ -3,21 +3,6 @@ import random
 from chatflow import Interpreter, register_tributary, Runtime
 
 
-@register_tributary("display")
-def display(context, speak_function, listen_function):
-    print(context)
-
-
-@register_tributary("manual_service")
-def manual_service(context, speak_function, listen_function):
-    print("manual_service")
-
-
-@register_tributary("comment_collector")
-def comment_collector(context, speak_function, listen_function):
-    print("comment_collector")
-
-
 @register_tributary("generate_random_number")
 def generate_random_number(context, speak_function, listen_function):
     number = random.randint(1, 100)
@@ -30,19 +15,11 @@ def s2n(context, speak_function, listen_function):
     context.set_parameter(number)
 
 
-@register_tributary("recharge")
-def recharge(context, speak_function, listen_function):
-    amount = context.get_parameter()
-    print("recharging", amount, "yuan")
-    print("recharge success")
-
-
 code = r"""
 flow origin {
     speak "guess a number between 1 and 100"
     handover generate_random_number
     fetch number
-    speak number
     while true {
         listen for answer
         if answer matches "\d+" as num {
@@ -75,8 +52,7 @@ def create_my_speak(initial=0):
 
 
 def main():
-    interpreter = Interpreter(code_path="main.flow")
-    print(interpreter)
+    interpreter = Interpreter(code=code)
     runtime = Runtime(interpreter)
     runtime.run()
 

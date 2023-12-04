@@ -9,3 +9,4 @@ API reference documentation covers the key classes and components of the ChatFlo
 - [Context](context.md) - Maintains state and data during execution
 - [Executors](executors.md) - Functions that execute individual ChatFlow statements
 - [Utils](utils.md) - Utility functions
+- [Test](test.md) - Test tool for ChatFlow programs

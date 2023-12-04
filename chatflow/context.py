@@ -98,7 +98,7 @@ class Context:
             str: A string representation of the object.
         """
         return str(self.scope)
-    
+
     def set_parameter(self, parameter):
         """Set the value of the parameter.
 
@@ -106,4 +106,4 @@ class Context:
             parameter (type): The value to set for the parameter.
         """
         self.parameter = parameter
-        
+
