@@ -149,10 +149,16 @@ class Interpreter:
     """
 
     def __init__(
-            self,
-            code_path=None,
-            code=None,
-    ):
+                self,
+                code_path=None,
+                code=None,
+        ):
+        """Initialize the Interpreter object.
+
+        Args:
+            code_path (str, optional): The path to the code file. Defaults to None.
+            code (str, optional): The code string. Defaults to None.
+        """
         if code_path:
             with open(code_path, "r") as f:
                 self.script = f.read()
@@ -162,4 +168,9 @@ class Interpreter:
         self.tree = self.parser.parse(self.script)
 
     def __repr__(self):
+        """Return a string representation of the object.
+
+        Returns:
+            str: A string representation of the object.
+        """
         return self.tree.pretty()

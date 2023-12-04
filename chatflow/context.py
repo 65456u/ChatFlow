@@ -42,37 +42,68 @@ class Context:
         self.scope_count -= 1
 
     def get_variable(self, name):
+        """Get the value of a variable from the current scope or any parent scopes.
+
+        Args:
+            name (str): The name of the variable.
+
+        Raises:
+            NameError: If the variable is not found in any scope.
+
+        Returns:
+            Any: The value of the variable.
+        """
         for i in range(self.scope_count - 1, -1, -1):
             if name in self.scope[i]:
                 return self.scope[i][name]
         raise NameError(f"Name '{name}' is not defined")
 
     def set_variable(self, name, value):
-            """Set the value of a variable in the context.
+        """Set the value of a variable in the context.
 
-            Args:
-                name (str): The name of the variable.
-                value (Any): The value to assign to the variable.
+        Args:
+            name (str): The name of the variable.
+            value (Any): The value to assign to the variable.
 
-            Returns:
-                bool: True if the variable was successfully set, False otherwise.
-            """
-            for i in range(self.scope_count - 1, -1, -1):
-                if name in self.scope[i]:
-                    self.scope[i][name] = value
-                    return False
-            self.scope[self.scope_count - 1][name] = value
-            return True
+        Returns:
+            bool: True if the variable was successfully set, False otherwise.
+        """
+        for i in range(self.scope_count - 1, -1, -1):
+            if name in self.scope[i]:
+                self.scope[i][name] = value
+                return False
+        self.scope[self.scope_count - 1][name] = value
+        return True
 
     def get_parameter(self):
+        """Get the parameter value.
+
+        Returns:
+            The value of the parameter.
+        """
         return self.parameter
 
     def set_timeout(self, timeout: bool):
+        """Set the timeout value for the context.
+
+        Args:
+            timeout (bool): A boolean value indicating whether to enable or disable timeout.
+        """
         self.timeout = timeout
 
     def __repr__(self):
+        """Return a string representation of the object.
+
+        Returns:
+            str: A string representation of the object.
+        """
         return str(self.scope)
     
     def set_parameter(self, parameter):
+        """Set the value of the parameter.
+
+        Args:
+            parameter (type): The value to set for the parameter.
+        """
         self.parameter = parameter
         

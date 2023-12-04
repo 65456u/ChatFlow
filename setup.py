@@ -7,5 +7,5 @@ setup(
     author="Yang Hongchen",
     author_email="yanghongchen@bupt.edu.cn",
     packages=find_packages(),
-    install_requires=["lark", "inputimeout"],
+    install_requires=["lark", "inputimeout", "aioconsole"],
 )
