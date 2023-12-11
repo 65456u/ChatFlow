@@ -134,6 +134,7 @@ def run_listen(statement, context, listen_function):
             else:
                 set_variable(statement.children[0], context, value)
 
+
 def run_store(statement, context):
     """Executes the store statement.
 
@@ -143,7 +144,8 @@ def run_store(statement, context):
     """
     value = get_value(statement.children[0], context)
     context.set_parameter(value)
-    
+
+
 def run_fetch(statement, context):
     """Executes the fetch statement.
 
