@@ -9,20 +9,22 @@
       
       
       
+        <link rel="prev" href="../grammar/">
       
-        <link rel="next" href="quick-start/">
+      
+        <link rel="next" href="../lexical/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.13">
     
     
       
-        <title>ChatFlow</title>
+        <title>Structure - ChatFlow</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.fad675c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
       
       
 
@@ -41,9 +43,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -65,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#structure-of-chatflow-program" class="md-skip">
           Skip to content
         </a>
       
@@ -81,7 +83,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="ChatFlow" class="md-header__button md-logo" aria-label="ChatFlow" data-md-component="logo">
+    <a href=".." title="ChatFlow" class="md-header__button md-logo" aria-label="ChatFlow" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -101,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ChatFlow
+              Structure
             
           </span>
         </div>
@@ -173,7 +175,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="ChatFlow" class="md-nav__button md-logo" aria-label="ChatFlow" data-md-component="logo">
+    <a href=".." title="ChatFlow" class="md-nav__button md-logo" aria-label="ChatFlow" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -188,28 +190,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    ChatFlow
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -218,69 +202,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
-    <span class="md-ellipsis">
-      Key Features
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#learning-chatflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      Learning ChatFlow
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledgements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Acknowledgements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -292,7 +213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="quick-start/" class="md-nav__link">
+      <a href="../quick-start/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -312,7 +233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tutorials/" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -332,7 +253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -349,19 +270,21 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -375,7 +298,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Grammar
@@ -389,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="grammar/" class="md-nav__link">
+      <a href="../grammar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -407,10 +330,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="structure/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Structure
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -419,6 +362,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    <span class="md-ellipsis">
+      Block
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Statement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tributary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tributary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -431,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="lexical/" class="md-nav__link">
+      <a href="../lexical/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -452,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="statement/" class="md-nav__link">
+      <a href="../statement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -473,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="BNF/" class="md-nav__link">
+      <a href="../BNF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -501,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="async/" class="md-nav__link">
+      <a href="../async/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -558,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="references/" class="md-nav__link">
+      <a href="../references/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -579,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="interpreter/" class="md-nav__link">
+      <a href="../interpreter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -600,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="runtime/" class="md-nav__link">
+      <a href="../runtime/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -621,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="context/" class="md-nav__link">
+      <a href="../context/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -642,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="executors/" class="md-nav__link">
+      <a href="../executors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -663,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="utils/" class="md-nav__link">
+      <a href="../utils/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -684,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="test/" class="md-nav__link">
+      <a href="../test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -712,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="LICENSE/" class="md-nav__link">
+      <a href="../LICENSE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -742,6 +741,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -750,45 +751,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#flow" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      Flow
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
+  <a href="#block" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Features
+      Block
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#learning-chatflow" class="md-nav__link">
+  <a href="#statement" class="md-nav__link">
     <span class="md-ellipsis">
-      Learning ChatFlow
+      Statement
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#acknowledgements" class="md-nav__link">
+  <a href="#tributary" class="md-nav__link">
     <span class="md-ellipsis">
-      Acknowledgements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#license" class="md-nav__link">
-    <span class="md-ellipsis">
-      License
+      Tributary
     </span>
   </a>
   
@@ -809,48 +801,80 @@
                   
 
 
-  <h1>ChatFlow</h1>
+<h1 id="structure-of-chatflow-program">Structure of ChatFlow Program</h1>
+<p>The structure of a ChatFlow program is based on three key concepts: flow, block, statement, and tributary.</p>
+<h2 id="flow">Flow</h2>
+<p>A flow in ChatFlow represents a sequence of steps or actions that define the conversational logic. It defines the structure and flow of the conversation between the user and the ChatFlow program. A flow is defined using the keyword "flow" followed by a flow name and enclosed within curly braces.</p>
+<p>The BNF (Backus-Naur Form) representation of a flow in ChatFlow is as follows:</p>
+<pre><code>&lt;flow&gt; ::= &quot;flow&quot; &lt;flow_name&gt; &quot;{&quot; &lt;block&gt; &quot;}&quot;
+&lt;flow_name&gt; ::= &lt;identifier&gt;
+</code></pre>
+<p>In this syntax, the "flow_name" is a user-defined identifier that uniquely identifies the flow within the program. It should be chosen to reflect the purpose or content of the flow. The "block" represents a collection of statements that define the actions and interactions within the flow. These statements can include if statements, speak statements, engage statements, handover statements, and more.</p>
+<p>To transition from one flow to another, you can use the engage statement. The engage statement allows you to initiate another flow within the current flow, enabling you to create complex conversation flows and modularize your ChatFlow program. </p>
+<p>To engage a specific flow, you use the following syntax:</p>
+<pre><code>engage flow_name
+</code></pre>
+<p>Here, "flow_name" refers to the name of the flow you want to transition to. By using the engage statement, you can seamlessly navigate between different flows and create dynamic and interactive conversations for your users.</p>
+<h2 id="block">Block</h2>
+<p>A block in ChatFlow is a series of statements grouped together within a flow. It represents a section of code that is executed sequentially. A block is enclosed within curly braces and can contain multiple statements.</p>
+<p>The definition of a block in ChatFlow can be represented as:</p>
+<pre><code>&lt;flow&gt; ::= &quot;flow&quot; &lt;flow_name&gt; &quot;{&quot; &lt;block&gt; &quot;}&quot;
+</code></pre>
+<p>In this representation, "statement*" denotes zero or more statements within the block. Each statement represents a specific action or instruction within the flow.</p>
+<p>When you create a block, any variables declared within that block are only accessible within that block's scope. They are not visible outside of the block or in other blocks within the flow.</p>
+<p>Here's an example that demonstrates the usage of a block in ChatFlow:</p>
+<pre><code class="language-chatflow">flow origin {
+    # Variables declared within the origin flow block
+    assign &quot;John&quot; to name
+    assign 25 to age
 
-<h2 id="introduction">Introduction</h2>
-<p>ChatFlow is a domain-specific language designed specifically for authoring conversational dialog flows, such as for chatbots and voice assistants. </p>
-<p>It provides an easy to read and write syntax that models natural conversations, with abstractions for common constructs needed for conversational interfaces. ChatFlow makes it simpler for non-programmers to define complex conversational experiences.</p>
-<p>The language can integrate tightly with Python enabling advanced functionality when required through custom code. ChatFlow aims to balance simplicity with versatility. </p>
-<h2 id="key-features">Key Features</h2>
-<ul>
-<li>
-<p><strong>Readability</strong>: ChatFlow syntax reads like natural language to enable non-programmers to understand and author dialog flows.</p>
-</li>
-<li>
-<p><strong>Easy to use</strong>: The specialized DSL provides high-level abstractions tailored for conversations like dialog flows, conditional logic, variables, etc. making chatbot development intuitive.</p>
-</li>
-<li>
-<p><strong>Integration</strong>: ChatFlow provides rich integration capabilities with external systems via Python. It allows data processing in real-time during the conversation. Users can define custom execution flows named "tributary", which enable integration with anything in Python including databases, APIs and more.</p>
-</li>
-<li>
-<p><strong>Integration with python's async functionality</strong>: ChatFlow enables asynchronous, non-blocking execution of dialogs via Python's async/await model. This allows I/O operations like API calls to run in parallel without blocking during a conversation.  </p>
-</li>
-<li>
-<p><strong>Interpreted</strong>: ChatFlow scripts are interpreted at runtime, enabling rapid prototyping. The interpreter provides early detection of errors in conversational logic during testing without needing compilation.</p>
-</li>
-<li>
-<p><strong>Extensible</strong>: Users can extend ChatFlow functionality by calling out to Python code within dialog scripts. This allows adding advanced or custom processing logic when needed.</p>
-</li>
-</ul>
-<h2 id="learning-chatflow">Learning ChatFlow</h2>
-<ol>
-<li><a href="tutorials/">Quick Start</a></li>
-<li><a href="tutorials/">Tutorial</a></li>
-<li><a href="grammar/">Grammar</a></li>
-</ol>
-<h2 id="acknowledgements">Acknowledgements</h2>
-<p>ChatFlow owes much gratitude to the open source projects that helped make it possible.</p>
-<p>In particular:</p>
-<ul>
-<li><strong>Lark</strong><br />
-    ChatFlow builds on the excellent <a href="https://github.com/lark-parser/lark">Lark parsing toolkit</a> for generating the abstract syntax tree from the Conversation Flow scripts. The ability to define a clean grammar and easily parse it into a manipulatable tree structure is invaluable.</li>
-</ul>
-<h2 id="license">License</h2>
-<p>Lark uses the <a href="LICENSE/">MIT license</a>.</p>
+    # Start of a block
+    {
+        # Variable declared within the block
+        assign &quot;Smith&quot; to lastName
+
+        speak &quot;Full name: &quot; + name + &quot; &quot; + lastName
+        speak &quot;Age: &quot; + age
+    }  # End of the block
+
+    # The following line will cause an error because lastName is not accessible here
+    speak &quot;Last name: &quot; + lastName
+}
+</code></pre>
+<p>In the above example, the block is defined within the <code>origin</code> flow. Inside the block, a variable <code>lastName</code> is declared, and the code within the block can access the <code>name</code>, <code>age</code>, and <code>lastName</code> variables. However, outside the block, the <code>lastName</code> variable is not accessible, and attempting to access it will result in an error.</p>
+<p>By using blocks, you can control the scope of variables and organize your code into logical sections. This allows for better code readability and prevents variable name conflicts between different parts of your ChatFlow program.</p>
+<h2 id="statement">Statement</h2>
+<p>A statement in ChatFlow is a basic unit of code that represents an action or instruction within a flow. It performs a specific task or interaction with the user. ChatFlow supports various types of statements, including conditionals, speaking to the user, engaging with other flows, listening for user input, assigning values to variables, looping constructs, and more.</p>
+<p>The BNF representation of a statement in ChatFlow can be defined as:</p>
+<pre><code>&lt;statement&gt; ::= &lt;if_statement&gt;
+              | &lt;speak_statement&gt;  
+              | &lt;engage_statement&gt;
+              | &lt;handover_statement&gt;
+              | &lt;end_statement&gt;
+              | &lt;listen_statement&gt;
+              | &lt;assign_statement&gt;
+              | &lt;while_statement&gt;  
+              | &lt;store_statement&gt;
+              | &lt;fetch_statement&gt;
+              | &quot;{&quot; &lt;block&gt; &quot;}&quot;
+</code></pre>
+<p>Each statement type has its own syntax and purpose within the ChatFlow program.</p>
+<p>For more detailed information on statements, please refer to <a href="../statement/">statement</a>.</p>
+<h2 id="tributary">Tributary</h2>
+<p>Tributaries are external functions that can be seamlessly integrated into your ChatFlow program to perform custom operations or interact with external services. They allow you to extend the functionality of ChatFlow by incorporating specific logic or functionality that is not provided by the built-in statements.</p>
+<p>To define a tributary in ChatFlow, you can use the <code>@register_tributary</code> decorator followed by the tributary name and the function definition. The function should accept the <code>context</code>, <code>speak_function</code>, and <code>listen_function</code> as parameters. The <code>context</code> parameter provides access to the ChatFlow context, allowing you to retrieve or modify parameters and other contextual information. The <code>speak_function</code> is used to send messages or responses to the user, while the <code>listen_function</code> is used to listen for user input.</p>
+<p>Here's an example of defining a tributary named "print_parameter" using Python:</p>
+<pre><code class="language-python">@register_tributary(&quot;print_parameter&quot;)
+def display(context, speak_function, listen_function):
+    print(context.get_parameter())
+</code></pre>
+<p>In this example, the <code>display</code> function is registered as the "print_parameter" tributary. Within the function, you have access to the ChatFlow context through the <code>context</code> parameter. You can use the <code>speak_function</code> to send messages or responses to the user, and the <code>listen_function</code> to listen for user input. In this case, the function simply prints the value of a parameter using the <code>get_parameter()</code> method of the context.</p>
+<p>To use a tributary within your ChatFlow program, you can use the <code>handover</code> statement followed by the name of the tributary. This allows you to transfer the conversation to the specified tributary for further processing.</p>
+<p>Here's an example of using the <code>handover</code> statement to invoke the "display" tributary:</p>
+<pre><code>handover print_parameter
+</code></pre>
+<p>In this example, the <code>print_parameter</code> statement transfers the conversation to the "display" tributary, allowing it to perform its specific logic or functionality. Once the tributary has completed its task, the control can be handed back to the ChatFlow program.</p>
+<p>By leveraging tributaries, you can integrate external functions or services seamlessly into your ChatFlow program, enhancing its capabilities and enabling custom operations based on your specific requirements.</p>
 
 
 
@@ -889,10 +913,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.cd18aaf1.min.js"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
       
     
   </body>
